@@ -1,0 +1,28 @@
+.footer {
+    background-color: #faf8fe;
+    padding: 40px;
+    text-align: center;
+}
+.linkBox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+.links {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.links a, .links .linksHead {
+    line-height: 2;
+}
+.links a:hover {
+    text-decoration: underline dashed;
+}
+.links .linksHead {
+    font-size: 1.2rem;
+    font-weight: 500;
+}

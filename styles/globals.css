@@ -2,17 +2,33 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: Fira Code, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: 16px;
+  color: var(--font);
+}
+:root {
+  /* 橘红 */
+  --main: #ff7500;
+  /* 琥珀 */
+  --main-dark: #ca6924;
+  /* 油绿 */
+  --green1: #00bc12;
+  /* 青碧 */
+  --select: #48c0a3;
+
+  --font: #232323;
+  /*  */
+  --head-bg: #fff;
 }
 
 a {
-  color: inherit;
+  color: var(--main);
   text-decoration: none;
+  transition: all 0.25s ease;
 }
-
-* {
-  box-sizing: border-box;
+a:hover {
+  color: var(--main-dark);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -21,6 +37,17 @@ a {
   }
   body {
     color: white;
-    background: black;
+    background: #242526;
   }
+  :root {
+    --font: #fff;
+  }
+  /* ::selection {} */
+}
+::selection {
+  background-color: var(--select);
+  color: #fff;
+}
+pre, pre code {
+  font-family: Fira Code, JetBrains Mono, monospace, sans-serif;
 }
