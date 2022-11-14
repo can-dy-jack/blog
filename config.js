@@ -1,6 +1,7 @@
 const config = {
   title: "陈科衡的博客",
   author: "kartjim",
+  description: "分享知识，但不只是知识",
   footer: [
     {
       label: "文档",

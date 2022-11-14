@@ -1,11 +1,11 @@
 import PostHead from "./head";
 import PostFooter from "./footer";
 
-function Layout({ children }) {
+function Layout({ children, className }) {
     return(
         <>
             <PostHead />
-            <main>
+            <main className={className}>
                 { children }
             </main>
             <PostFooter />

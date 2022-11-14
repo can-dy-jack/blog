@@ -6,10 +6,13 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-size: 16px;
   color: var(--font);
+  background-color: var(--bg);
 }
 :root {
   /* 橘红 */
   --main: #ff7500;
+  --main-blur1: rgba(255, 117, 0, .1);
+  --main-blur2: rgba(255, 117, 0, .2);
   /* 琥珀 */
   --main-dark: #ca6924;
   /* 油绿 */
@@ -18,8 +21,11 @@ body {
   --select: #48c0a3;
 
   --font: #232323;
-  /*  */
   --head-bg: #fff;
+  --foot-bg: #faf8fe;
+  --bg: #fff;
+  --pre-bg: #f5f8f6;
+  --index-head-bg: var(--main);
 }
 
 a {
@@ -30,19 +36,26 @@ a {
 a:hover {
   color: var(--main-dark);
 }
+img {
+  max-width: 100%;
+}
 
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
   body {
-    color: white;
-    background: #242526;
+    color: var(--font);
+    background: var(--bg);
   }
   :root {
     --font: #fff;
+    --head-bg: #1c1e21;
+    --foot-bg: #1c1e21;
+    --bg: #1b1b1b;
+    --pre-bg: #232328;
+    --index-head-bg: var(--main-dark);
   }
-  /* ::selection {} */
 }
 ::selection {
   background-color: var(--select);
@@ -50,4 +63,24 @@ a:hover {
 }
 pre, pre code {
   font-family: Fira Code, JetBrains Mono, monospace, sans-serif;
+}
+pre {
+  max-height: 500px;
+  background-color: var(--pre-bg);
+  padding: 20px;
+  border-radius: 10px;
+  overflow: auto;
+}
+
+/* markdwon styles */
+blockquote {
+  margin: 0;
+  background-color: var(--main-blur2);
+  padding: 6px 10px;
+  border-left: 5px solid var(--main);
+  border-radius: 5px;
+}
+blockquote p {
+  margin: 10px;
+  padding: 5px;
 }

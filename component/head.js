@@ -17,9 +17,15 @@ function PostHead({}) {
                 </Link>
             </div>
             <nav className={styles.links}>
-                <Link href="/">主页</Link>
-                <Link href="/">文章</Link>
-                <Link href="/">博客</Link>
+                <Link href="/">
+                    主页
+                </Link>
+                <Link href="/doc">文章</Link>
+                <Link href="/blog">博客</Link>
+                <Link href="/about">
+                    关于我
+                </Link>
+                <a href="https://github.com/can-dy-jack/blog" target="_blank" className={styles.github}></a>
             </nav>
         </header>
     )

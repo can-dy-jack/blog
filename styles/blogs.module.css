@@ -1,0 +1,18 @@
+.main {
+    display: flex;
+    justify-content: center;
+}
+.aside {
+    width: 200px;
+    height: calc(100vh - 50px);
+    padding: 5px;
+    border-right: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+.body {
+    padding: 10px;
+    /* FIXME */
+    width: 700px;
+}
