@@ -5,6 +5,7 @@ import config from "../config";
 export default function SEO({ title, description, keywords }) {
     return (
         <Head>
+            <>
             <title>{ title } - { config.title }</title>
             <meta name="description" content={ description } />
             <meta name="keywords" content={keywords.join(",")} />
@@ -14,6 +15,7 @@ export default function SEO({ title, description, keywords }) {
             <meta property="og:description" content={ description } />
             <meta property="og:image" content="/logo.jpg" />
             <meta property="og:release_date" content={ new Date().toLocaleString() } />
+            </>
         </Head>
     )
 }
