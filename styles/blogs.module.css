@@ -1,15 +1,29 @@
 .main {
     display: flex;
     justify-content: center;
+    padding: 50px 0;
+    gap: 30px;
 }
 .aside {
     width: 200px;
     height: calc(100vh - 50px);
     padding: 5px;
-    border-right: 1px solid #eee;
     position: sticky;
-    top: 0;
+    top: 50px;
     left: 0;
+}
+.aside_blog {
+    margin: 10px 0;
+}
+.blog {
+    margin: 10px 0;
+    line-height: 1.5;
+}
+.blog a {
+    color: var(--font);
+}
+.blog a:hover {
+    color: var(--main);
 }
 .body {
     padding: 10px;

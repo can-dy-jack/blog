@@ -1,22 +1,28 @@
 import Layout from "../../component/layout"
+import SEO from "../../component/SEO";
 import { getSortedBlogsData } from "../../lib/getblog"
 import Link from "next/link"
+import Image from 'next/image'
+import s from "../../styles/blog.module.css"
 
 function BlogIndex({ allBlogsData }) {
+
     return (
         <Layout>
-            <section>
-                <div>
-                    最近博客
-                </div>
-                <div>
-                    {
-                        allBlogsData.map(blog => (
-                            <div key={blog.title}>
-                                <Link href={"/blog/" + blog.slug}>{blog.title}</Link>
-                            </div>
-                        ))
-                    }
+            <SEO title="博客列表" keywords={["博客列表", "blogs"]}></SEO>
+            <section className={s.head}>
+                <Image src="/img/svg404/27.svg" alt="blog-svg" 
+                height={400}
+                width={500} />
+                <h1>文章列表</h1>
+            </section>
+            <section className={s.bloglistbox}>
+                <div className={s.bloglist}>
+                    {allBlogsData.map(blog => (
+                        <div key={blog.title} className={s.blogitem}>
+                            <Link href={"/blog/" + blog.slug}>{blog.title}</Link>
+                        </div>
+                    ))}
                 </div>
             </section>
         </Layout>

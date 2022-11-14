@@ -1,0 +1,29 @@
+.head {
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+.bloglistbox {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+}
+.bloglist {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: space-evenly;
+}
+.blogitem {
+    width: 300px;
+    background: var(--bg);
+    border: 1px solid var(--main);
+    border-radius: 10px;
+    padding: 20px;
+    transition: all 0.3 ease;
+    min-height: 60px;
+}
+.blogitem:hover {
+    background: var(--main-blur1);
+    box-shadow: 0 0 0 3px var(--main-blur2);
+}

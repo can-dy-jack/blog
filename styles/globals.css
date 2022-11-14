@@ -7,6 +7,7 @@ body {
   font-size: 16px;
   color: var(--font);
   background-color: var(--bg);
+  scroll-behavior: smooth;
 }
 :root {
   /* 橘红 */
@@ -24,7 +25,6 @@ body {
   --head-bg: #fff;
   --foot-bg: #faf8fe;
   --bg: #fff;
-  --pre-bg: #f5f8f6;
   --index-head-bg: var(--main);
 }
 
@@ -53,7 +53,6 @@ img {
     --head-bg: #1c1e21;
     --foot-bg: #1c1e21;
     --bg: #1b1b1b;
-    --pre-bg: #232328;
     --index-head-bg: var(--main-dark);
   }
 }
@@ -61,14 +60,26 @@ img {
   background-color: var(--select);
   color: #fff;
 }
+code {
+  color: #1ba4ce;
+  font-family: Fira Code, JetBrains Mono, monospace, sans-serif;
+}
+code::before, code::after {
+  content: "`";
+}
 pre, pre code {
   font-family: Fira Code, JetBrains Mono, monospace, sans-serif;
+  /* color: #232323; */
+}
+pre code::before , pre code::after {
+  content: "";
 }
 pre {
   max-height: 500px;
-  background-color: var(--pre-bg);
+  background-color: #1c1e21;
   padding: 20px;
   border-radius: 10px;
+  /* FIXME pre 来做overflow有问题，可改用code防止溢出或外面包括一个父标签来做溢出（同时给复制按钮定位） */
   overflow: auto;
 }
 
@@ -83,4 +94,7 @@ blockquote {
 blockquote p {
   margin: 10px;
   padding: 5px;
+}
+p {
+  line-height: 1.8;
 }

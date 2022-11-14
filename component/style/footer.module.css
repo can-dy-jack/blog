@@ -11,10 +11,13 @@
     margin-bottom: 40px;
 }
 .links {
-    width: 300px;
+    /* width: 300px; */
     display: flex;
+    flex-wrap: wrap;
+    min-width: 200px;
     flex-direction: column;
     align-items: flex-start;
+    margin-bottom: 30px;
 }
 .links a, .links .linksHead {
     line-height: 2;
@@ -25,4 +28,5 @@
 .links .linksHead {
     font-size: 1.2rem;
     font-weight: 500;
+    margin: 10px 0;
 }

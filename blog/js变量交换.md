@@ -4,7 +4,8 @@ slug: js-change-var
 date: "2022-11-13"
 ---
 ## 5种交换变量的方法
-前提：
+
+**前提**：
 ```js
 let a = 12, b =34;
 ```
@@ -72,7 +73,7 @@ a = a[1];
 
 首先，需要引用 依赖库 `lodash` ，和 `benchmark.js`。
 
-```js
+```html
 <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/benchmark@2.1.4/benchmark.min.js"></script>
 ```
