@@ -5,30 +5,38 @@ import styles from "../../styles/blogs.module.css";
 import Link from "next/link";
 
 function BlogPages({ data, allBlogs }) {
+
     return (
         <>
         <SEO title={data.title} keywords={["博客列表", data.slug, data.title]}></SEO>
         <Layout className={styles.main}>
-            <aside className={styles.aside}>
-                <h3>最近的博文</h3>
-
-                <div className={styles.aside_blogs}>
-                    {allBlogs.map(blog => (
-                        <div key={blog.slug}  className={styles.blog}>
-                            <Link href={blog.slug}>{blog.title}</Link>
-                        </div>
-                    ))}
-                </div>
-            </aside>
-            <section className={styles.body}>
-                <h1>{data.title}</h1>
+            <section className={styles.article_info} style={{
+                    "--bg": data.img ? `url(${data.img})` : 'url("/img/default.jpg")',
+                    "--h": `${data.imgHeight || "300px"}`,
+                    color: `${data.color || "inherit"}`,
+                }}>
+                <h1 className={styles.title}>{data.title}</h1>
                 <p>
-                    {/* FIXME 时间格式化 */}
-                    { data?.date }
+                  {data.time}
                 </p>
+            </section>
+            <section className={styles.article_box}>
                 <article dangerouslySetInnerHTML={
                     { __html: data.contentHtml }
                 }></article>
+            </section>
+
+            <section className={styles.foot}>
+                <aside className={styles.foot_box}>
+                    <h3>最近的博文</h3>
+                    <div className={styles.more_blog}>
+                        {allBlogs.map(blog => (
+                            <div key={blog.slug}>
+                                <Link href={blog.slug}>{blog.title}</Link>
+                            </div>
+                        ))}
+                    </div>
+                </aside>
             </section>
         </Layout>
         </>

@@ -1,36 +1,69 @@
 .main {
-    display: flex;
-    justify-content: center;
     padding: 50px 0;
-    gap: 30px;
 }
-.aside {
-    width: 200px;
-    height: calc(100vh - 50px);
-    padding: 5px;
-    position: sticky;
-    top: 50px;
-    left: 0;
+/* article_info */
+.article_info {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    position: relative;
+    height: var(--h);
 }
-.aside_blog {
-    margin: 10px 0;
+.article_info::after {
+    content: "";
+    background: transparent center / cover no-repeat var(--bg);
+    position: absolute;
+    top: -10px;left: -10px;width: calc(100% + 20px);
+    height: calc(var(--h) + 20px);
+    z-index: 2;
+    filter: blur(5px);
 }
-.blog {
-    margin: 10px 0;
-    line-height: 1.5;
+.article_info * {
+    z-index: 5;
 }
 
-.blog a {
-    color: var(--font);
+.title {
+    font-size: 3rem;
+    font-family: 楷体;
+    margin: 10px;
 }
-.blog a:hover {
-    color: var(--main);
+/*  */
+.article_box {
+    /* FIXME 待定 - 适配还行！ */
+    width: clamp(400px, 80%, 800px);
+    margin: 20px auto;
 }
-.body {
-    padding: 10px;
-    /* FIXME */
-    width: 700px;
+
+/*  */
+.foot {
+    margin-top: 50px;
+    width: 100%;
+    border-top: 1px solid var(--main);
 }
-.body h1 {
-    font-size: 2rem;
+.foot_box {
+    margin: 10px;
+}
+.foot_box h3 {
+    text-align: center;
+    font-size: 1.5rem;
+}
+.more_blog {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.more_blog>div {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #eee;
+    min-height: 80px;
 }

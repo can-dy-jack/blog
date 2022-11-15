@@ -2,6 +2,9 @@
 title: markdwon测试文档
 slug: md-test
 date: "2022-11-13"
+img: "https://images.unsplash.com/photo-1668428178242-09ee02d13340?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+imgHeight: "500px"
+color: "#fff"
 ---
 
 > markdwon测试文档

@@ -21,9 +21,10 @@
     border-radius: 10px;
     padding: 20px;
     transition: all 0.3 ease;
-    min-height: 60px;
+    min-height: 120px;
+    background: center / cover no-repeat url("/img/default4.jpg");
 }
 .blogitem:hover {
-    background: var(--main-blur1);
-    box-shadow: 0 0 0 3px var(--main-blur2);
+    box-shadow: 0 0 0 3px var(--main-blur2),
+    0 3px 5px rgba(0,0,0,.3);
 }

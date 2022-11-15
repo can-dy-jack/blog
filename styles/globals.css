@@ -75,12 +75,9 @@ pre code::before , pre code::after {
   content: "";
 }
 pre {
-  max-height: 500px;
   background-color: #1c1e21;
-  padding: 20px;
-  border-radius: 10px;
-  /* FIXME pre 来做overflow有问题，可改用code防止溢出或外面包括一个父标签来做溢出（同时给复制按钮定位） */
-  overflow: auto;
+  position: relative;
+  border-radius: 5px;
 }
 
 /* markdwon styles */
