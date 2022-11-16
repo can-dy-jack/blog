@@ -25,6 +25,7 @@
     "remark": "^14.0.2",
     "remark-collapse": "^0.1.2",
     "remark-emoji": "^3.0.2",
+    "remark-gfm": "^3.0.1",
     "remark-math": "^5.1.1",
     "remark-rehype": "^10.1.0"
   }

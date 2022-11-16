@@ -21,7 +21,7 @@ function BlogPages({ data, allBlogs }) {
                 </p>
             </section>
             <section className={styles.article_box}>
-                <article dangerouslySetInnerHTML={
+                <article className="md" dangerouslySetInnerHTML={
                     { __html: data.contentHtml }
                 }></article>
             </section>

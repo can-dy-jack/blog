@@ -33,9 +33,7 @@ This is an H2
 
 ## markdown 段落和换行
 一个 `markdown` 段落是由一个或多个连续的文本行组成，它的前后要有一个以上的空行（空行的定义是显示上看起来像是空的，便会被视为空行。比方说，若某一行只包含空格和制表符，则该行也会被视为空行）。普通段落不该用空格或制表符来缩进。  
-「由一个或多个连续的文本行组成」这句话其实暗示了 `markdown` 允许段落内的强迫换行（插入换行符），这个特性和其他大部分的 `text-to-HTML` 格式不一样（包括 `Movable Type` 的「Convert Line Breaks」选项），其它的格式会把每个换行符都转成 `<br />` 标签。  
-如果你确实想要依赖 markdown 来插入 `<br />` 标签的话，在插入处先按入两个以上的空格然后回车。  
-的确，需要多费点事（多加空格）来产生 `<br />` ，但是简单地「每个换行都转换为 `<br />`」的方法在 `Markdown` 中并不适合， `markdown` 中 `email` 式的 区块引用 和多段落的 列表 在使用换行来排版的时候，不但更好用，还更方便阅读。  
+`markdown` 允许段落内的强迫换行（插入换行符）。**两个以上的空格+回车** 即为 `<br />` 标签。  
 
 ## markdown 列表
 无序列表
@@ -73,10 +71,9 @@ console.log("highlight")
 你可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。你也可以在星号或是减号中间插入空格。下面每种写法都可以建立分隔线：
 ```md
 * * *
-***
 ******
 - - -
------------------------
+------
 ```
 ## markdown 链接
 markdown 支持两种形式的链接语法： 行内式和参考式两种形式。  
@@ -94,7 +91,55 @@ This is [an example](http://bing.com/ "Title") inline link.
 
 [This link](http://bing.com/) has no title attribute.
 
+## 表格
 
+|markdown语法|用法|
+|---|---|
+|标题|`# h1`|
+|列表|`- w`|
+|文字 加粗、斜体|`**bold** **itali**`|
+|代码|`code`|
+|emoji| `:smile: :-)` :smile: :-) |
+
+## Footnote
+
+A note[^footenote1] 点击会跳转到文章尾部，可以查看对应内容的详细的解释
+
+[^footenote1]: Big note. 
+
+## 文字格式
+
+```md
+删除线：~one~ or ~~two~~
+粗体：
+**double asterisks**
+__double underscores__
+
+斜体：
+*single asterisks*
+_single underscores_
+```
+~one~ or ~~two~~  
+*single asterisks*  
+_single underscores_  
+**double asterisks**  
+__double underscores__  
+
+**强调**也可以直接 *插在文字中间* 。
+
+## Tasklist
+
+* [x] React
+* [x] NextJS
+* [ ] Redux
+
+## markdown 图片
+
+```md
+![插画来自https://error404.fun/](/img/svg404/10.svg)
+```
+
+![插画来自https://error404.fun/](/img/svg404/10.svg)
 
 ## emoji
 
@@ -119,7 +164,7 @@ $$
 
 
 ## more
-- 脚注 [footnote](https://github.com/jackfletch/remark-numbered-footnote-labels)
+
 - references: [参考](https://github.com/Xunnamius/unified-utils/tree/main/packages/remark-renumber-references)
 - mermaid
 - toc

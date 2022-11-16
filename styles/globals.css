@@ -26,6 +26,7 @@ body {
   --foot-bg: #faf8fe;
   --bg: #fff;
   --index-head-bg: var(--main);
+  --border: #eee;
 }
 
 a {
@@ -54,6 +55,7 @@ img {
     --foot-bg: #1c1e21;
     --bg: #1b1b1b;
     --index-head-bg: var(--main-dark);
+    --border: #555;
   }
 }
 ::selection {
@@ -94,4 +96,25 @@ blockquote p {
 }
 p {
   line-height: 1.8;
+}
+table {
+  border: 1px solid var(--border);
+  padding: 1px;
+  border-radius: 5px;
+  width: 100%;
+}
+table thead {
+  background-color: var(--border);
+}
+table thead tr th {
+  padding: 5px 10px;
+}
+table tbody tr:nth-child(2n) {
+  background-color: var(--foot-bg);
+}
+table tbody tr td {
+  padding: 5px 10px;
+}
+.md * {
+  scroll-margin-top: 60px;
 }
