@@ -19,7 +19,9 @@ function BlogIndex({ allBlogsData }) {
             <section className={s.bloglistbox}>
                 <div className={s.bloglist}>
                     {allBlogsData.map(blog => (
-                        <div key={blog.title} className={s.blogitem}>
+                        <div key={blog.title} className={s.blogitem} style={{
+                            "--bg": blog.img ? `url(${blog.img})` : `url("/img/default4.jpg")`
+                        }}>
                             <Link href={"/blog/" + blog.slug}>{blog.title}</Link>
                         </div>
                     ))}

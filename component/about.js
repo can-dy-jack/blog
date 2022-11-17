@@ -8,7 +8,7 @@ function AboutTemplate({ children }) {
             <main>
                 <article style={{
                     width: "80%",
-                    margin: "50px auto"
+                    margin: "100px auto"
                 }}>
                     { children }
                 </article>

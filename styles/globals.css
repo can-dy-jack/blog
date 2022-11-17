@@ -3,7 +3,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: Fira Code, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    Ubuntu, microsoft yahei,Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-size: 16px;
   color: var(--font);
   background-color: var(--bg);
@@ -80,6 +80,8 @@ pre {
   background-color: #1c1e21;
   position: relative;
   border-radius: 5px;
+  /*  */
+  color: #fff;
 }
 
 /* markdwon styles */

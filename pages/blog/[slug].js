@@ -31,7 +31,9 @@ function BlogPages({ data, allBlogs }) {
                     <h3>最近的博文</h3>
                     <div className={styles.more_blog}>
                         {allBlogs.map(blog => (
-                            <div key={blog.slug}>
+                            <div key={blog.slug} style={{
+                                "--bg": blog.img ? `url(${blog.img})` : `url("/img/default4.jpg")`
+                            }}>
                                 <Link href={blog.slug}>{blog.title}</Link>
                             </div>
                         ))}

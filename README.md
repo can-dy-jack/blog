@@ -2,8 +2,13 @@
 
 ### 进行中
 - [x] 脚注 footnote
+- [x] 整理markdown文档
+- [ ] 文章tag 和 cate
+- [ ] 更新footer的链接
 
-### markdown front-matter
+
+## markdown规范
+### front-matter 规范
 - img
 - imgHeight
 - color
@@ -14,8 +19,8 @@
 - cate
 
 
-### 计划
-- [remark扩展](https://github.com/remarkjs/remark/blob/main/doc/plugins.md#list-of-plugins)
+
+<!-- - [remark扩展](https://github.com/remarkjs/remark/blob/main/doc/plugins.md#list-of-plugins) -->
 
 
 

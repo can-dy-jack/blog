@@ -2,6 +2,11 @@
 title: JavaScript 两个变量的值交换的方式及性能
 slug: js-change-var
 date: "2022-11-13"
+img: "https://images.unsplash.com/photo-1668525543127-1e3820020361?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
+color: "#fff"
+
+tag: js
+cate: js
 ---
 ## 5种交换变量的方法
 

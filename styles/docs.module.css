@@ -1,0 +1,24 @@
+.article_box {
+    padding-top: 50px;
+    display: flex;
+}
+.aside {
+    width: 300px;
+    box-sizing: border-box;
+    background-color: var(--bg);
+    border-right: 1px solid #ddd;
+    position: sticky;
+    top: 50px;left: 0;
+    height: 100vh;
+
+    padding: 10px;
+}
+
+
+
+.article {
+    flex: 1;
+    margin: 10px;
+}
+
+

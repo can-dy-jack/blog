@@ -22,7 +22,7 @@
     padding: 20px;
     transition: all 0.3 ease;
     min-height: 120px;
-    background: center / cover no-repeat url("/img/default4.jpg");
+    background: center / cover no-repeat var(--bg);
 }
 .blogitem:hover {
     box-shadow: 0 0 0 3px var(--main-blur2),
