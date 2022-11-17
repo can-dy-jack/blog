@@ -5,6 +5,7 @@
 - [x] 整理markdown文档
 - [ ] 文章tag 和 cate
 - [ ] 更新footer的链接
+- [ ] 适配移动端
 
 
 ## markdown规范

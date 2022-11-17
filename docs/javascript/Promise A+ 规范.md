@@ -49,12 +49,12 @@ promise.then(onFulfilled, onRejected)
     - 它必须在 `promise` 被拒绝后调用，`promise` 的 `reason` 是它的第一个参数
     - 在 `promise` 被拒绝之前不能调用它
     - 不能多次调用它
-- 在执行 [`execution context`](https://es5.github.io/#x10.3) 堆栈（仅包含平台代码）之前，不得调用 `onFulfilled` 或 `onRejected`。 [$^{[1]}$](#第一点)
-- `onFulfilled` 和 `onRejected` 必须作为函数调用（即没有 `this` 值）。 [$^{[2]}$](#第二点)
+- 在执行 [`execution context`](https://es5.github.io/#x10.3) 堆栈（仅包含平台代码）之前，不得调用 `onFulfilled` 或 `onRejected`。 [^1]
+- `onFulfilled` 和 `onRejected` 必须作为函数调用（即没有 `this` 值）。 [^2]
 - `then` 可能会在同一个 `Promise` 上被多次调用
     - 当 `Promise` 被实现，所有相应的 `onFulfilled` 回调必须按照它们对 `then` 的调用顺序执行。
     - 当 `promise` 被拒绝时，所有相应的 `onRejected` 回调必须按照它们对 `then` 的发起调用的顺序执行。
-- `then` 必须返回一个 `promise` [$^{[3]}$](#第三点)
+- `then` 必须返回一个 `promise` [^3]
     ```js
     promise2 = promise1.then(onFulfilled, onRejected);
     ```
@@ -69,12 +69,12 @@ promise.then(onFulfilled, onRejected)
 为了运行`[[Resolve]](promise, x)`，执行以下步骤：
 
 1. 如果 `promise` 和 `x` 指向同一个对象，则以 `TypeError` 作为原因拒绝 `promise`
-2. 如果 `x` 是一个 `promise`，采用它的状态： [$^{[4]}$](#第四点)
+2. 如果 `x` 是一个 `promise`，采用它的状态： [^4]
     1. 如果 `x` 处于`pending`，则 `Promise` 必须保持`pending`，直到 `x` 变为 `fulfilled` 或 `rejected`
     2. 当 `x` 是 `fulfilled`，使用相同的 `value` 实现 `promise`
     3. 当 `x` 是 `rejected`，以同样的 `reason` 拒绝 `promise`
 3. 除此之外，如果 `x` 是一个对象或函数
-    1. 令 `then` 为 `x.then`  [$^{[5]}$](#第五点)
+    1. 令 `then` 为 `x.then`  [^5]
     2. 如果检索属性 `x.then` 导致抛出异常 `e`，则以 `e` 为 `value` 拒绝 `promise`
     3. 如果 `then` 是一个函数，则使用 `x` 作为 `this`、第一个参数 `resolvePromis`e 和第二个参数 `rejectPromise` 调用它，其中：
         - 使用 `value` `y` 调用 `resolvePromise` 时，运行 `[[Resolve]](promise, y)`
@@ -86,25 +86,18 @@ promise.then(onFulfilled, onRejected)
     4. 如果 `then` 不是函数，则用 `x` 实现 `promise`
 4. 如果 `x` 不是对象或函数，使用 `x` 实现`promise`
 
-如果一个参与了 `thenable` 循环链的 `thenable` 去 `resolve promise`，这样 `[[Resolve]](promise, thenable)` 的递归性质最终会导致 `[[Resolve]](promise, thenable)` 会被再次调用，遵循上述算法将会导致无限递归。我们鼓励去实现（但不是必需的）检测这样的递归，并以 `TypeError` 作为 `reason` 去 `reject Promise`。 [$^{[6]}$](#第六点)
+如果一个参与了 `thenable` 循环链的 `thenable` 去 `resolve promise`，这样 `[[Resolve]](promise, thenable)` 的递归性质最终会导致 `[[Resolve]](promise, thenable)` 会被再次调用，遵循上述算法将会导致无限递归。我们鼓励去实现（但不是必需的）检测这样的递归，并以 `TypeError` 作为 `reason` 去 `reject Promise`。 [^6]
 
-## 3、注意事项
 
-### 第一点
-这里的“平台代码”指的是引擎，环境和 promise 实现代码。实际上，这个要求保证了 `onFulfilled` 和 `onRejected` 将会异步执行，在事件循环之后，用一个新的堆栈来调用它。 这可以通过“宏任务”机制（如 `settimeout`或 `setimmediate` ）或“微任务”机制（如 `mutationobserver` 或 `process.nextick`）来实现。由于 `Promise` 实现被视为平台代码，因此它本身可能包含一个任务调度队列或“`trampoline`”，并在其中调用处理程序。
+[^1]: 这里的“平台代码”指的是引擎，环境和 promise 实现代码。实际上，这个要求保证了 `onFulfilled` 和 `onRejected` 将会异步执行，在事件循环之后，用一个新的堆栈来调用它。 这可以通过“宏任务”机制（如 `settimeout`或 `setimmediate` ）或“微任务”机制（如 `mutationobserver` 或 `process.nextick`）来实现。由于 `Promise` 实现被视为平台代码，因此它本身可能包含一个任务调度队列或“`trampoline`”，并在其中调用处理程序。
 
-### 第二点
-也就是说，在 strict 模式下，这（指的是this）在它们内部将会是 undefined；在普通模式下，它将会是全局对象。
+[^2]: 也就是说，在 strict 模式下，这（指的是this）在它们内部将会是 undefined；在普通模式下，它将会是全局对象。
 
-### 第三点
-如果实现满足所有要求，则实现可能允许 `promise2 == promise1`。每个实现都应该记录它是否能够生成 `promise2 == promise1` 以及在什么条件下。
+[^3]: 如果实现满足所有要求，则实现可能允许 `promise2 == promise1`。每个实现都应该记录它是否能够生成 `promise2 == promise1` 以及在什么条件下。
 
-### 第四点
-一般来说，只有当 `X` 来自当前的实现时，才知道它是一个真正的 `promise`。本条款允许使用特定于实现的方法来采用已知一致承诺的状态。
+[^4]: 一般来说，只有当 `X` 来自当前的实现时，才知道它是一个真正的 `promise`。本条款允许使用特定于实现的方法来采用已知一致承诺的状态。
 
-### 第五点
-此过程首先存储对 x 的引用，然后测试该引用，然后调用该引用，避免多次访问 `x.then` 属性。这些预防措施对于确保访问器属性的一致性非常重要，访问器属性的值可能在两次检索之间发生更改。
+[^5]: 此过程首先存储对 x 的引用，然后测试该引用，然后调用该引用，避免多次访问 `x.then` 属性。这些预防措施对于确保访问器属性的一致性非常重要，访问器属性的值可能在两次检索之间发生更改。
 
-### 第六点
-实现方式中不应当在 `thenbale` 链中的深度设置主观的限制，并且不应当假设链的深度超过主观的限制后会是无限的。只有真正的循环才能导致`TypeError`。如果遇到由无限多个不同 `thenable` 组成的链，那么永远递归是正确的行为。
+[^6]: 实现方式中不应当在 `thenbale` 链中的深度设置主观的限制，并且不应当假设链的深度超过主观的限制后会是无限的。只有真正的循环才能导致`TypeError`。如果遇到由无限多个不同 `thenable` 组成的链，那么永远递归是正确的行为。
 

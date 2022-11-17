@@ -1,15 +1,18 @@
 import { useRouter } from "next/router";
 import Layout from "../../component/layout";
-import { get_doc_paths, get_docs_info } from "../../lib/getDoc";
+import SEO from "../../component/SEO";
+import { get_doc_paths, get_docs_info, get_doc_data } from "../../lib/getDoc";
 import styles from "../../styles/docs.module.css";
 import Link from "next/link";
 
-function DOCPages({ data_asider }) {
+function DOCPages({ data_asider, data }) {
   const router = useRouter();
 
   return (
     <>
       <Layout>
+        <SEO/>  {/* TODO */}
+        
         <div className={styles.article_box}>
           <aside className={styles.aside}>
             {data_asider.data.map((item) => {
@@ -60,11 +63,13 @@ function DOCPages({ data_asider }) {
               }
             })}
           </aside>
-          <article className={styles.article}>
-            {/*  */}
-            { JSON.stringify(router.query.slug.join(","))}
-            { }
-          </article>
+          <section className={styles.article}>
+            <h1>{data.title}</h1>
+            <article className="md" dangerouslySetInnerHTML={{
+                __html: data.contentHtml
+            }}>
+            </article>
+          </section>
         </div>
       </Layout>
     </>
@@ -81,9 +86,11 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const data_asider = await get_docs_info();
+  const data = await get_doc_data(params.slug);
   return {
     props: {
       data_asider,
+      data
     },
   };
 }

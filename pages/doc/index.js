@@ -1,10 +1,10 @@
 import Layout from "../../component/layout";
 import SEO from "../../component/SEO";
-import { get_docs_info } from "../../lib/getDoc";
+import { get_docs_info, get_doc_data } from "../../lib/getDoc";
 import styles from "../../styles/docs.module.css";
 import Link from "next/link";
 
-function DocIndex({ data_asider }) {
+function DocIndex({ data_asider, data }) {
   return (
     <Layout className="main">
       <SEO title="文章"></SEO>
@@ -58,10 +58,12 @@ function DocIndex({ data_asider }) {
             }
           })}
         </aside>
-        <article className={styles.article}>
-          article
-          <pre>{JSON.stringify(data_asider, null, 4)}</pre>
-        </article>
+        <section className={styles.article}>
+          <h1>{data.title}</h1>
+          <article className="md" dangerouslySetInnerHTML={{
+            __html: data.contentHtml
+          }}></article>
+        </section>
       </div>
     </Layout>
   );
@@ -69,9 +71,11 @@ function DocIndex({ data_asider }) {
 
 export async function getStaticProps() {
   const data_asider = await get_docs_info();
+  const data = await get_doc_data(["", "", ""]);
   return {
     props: {
       data_asider,
+      data,
     },
   };
 }
