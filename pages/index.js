@@ -15,7 +15,10 @@ export default function Home() {
           <h3 className={styles.subtitle}>{config.description}</h3>
           <div className={styles.btn}>
             <button>
-              <Link href="/blog">我的博客📖 {"->"}</Link>
+              <Link href="/blog">我的博客 {"->"}</Link>
+            </button>
+            <button>
+              <Link href="/doc">我的文章📚</Link>
             </button>
           </div>
         </section>

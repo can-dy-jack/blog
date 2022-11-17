@@ -9,13 +9,44 @@
     border-right: 1px solid #ddd;
     position: sticky;
     top: 50px;left: 0;
-    height: 100vh;
+    height: fit-content;
+    /* height: 100vh; */
 
     padding: 10px;
 }
+.aside_file {
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.25s ease;
+    display: block;
+    color: var(--font);
+    margin-bottom: 3px;
+}
+.aside_file:hover {
+    background-color: var(--foot-bg);
+    cursor: pointer;
+    color: var(--main);
+}
+.aside_dir_head {
+    padding: 5px 10px;
+    border-radius: 5px;
+    /* cursor: pointer; */
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+.aside_dir_head svg {
+    transform: rotate(90deg);
+}
+.aside_dir .aside_file {
+    margin-left: 10px;
+}
+.active {
+    background-color: var(--foot-bg);
+    color: var(--main);
+}
 
-
-
+/*  */
 .article {
     flex: 1;
     margin: 10px;

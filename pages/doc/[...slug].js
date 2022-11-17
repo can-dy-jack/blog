@@ -1,15 +1,71 @@
 import { useRouter } from "next/router";
 import Layout from "../../component/layout";
-import { get_doc_paths } from "../../lib/getDoc";
+import { get_doc_paths, get_docs_info } from "../../lib/getDoc";
+import styles from "../../styles/docs.module.css";
+import Link from "next/link";
 
-function DOCPages({ data }) {
+function DOCPages({ data_asider }) {
   const router = useRouter();
 
   return (
     <>
       <Layout>
-        <div style={{ margin: "200px" }}>{JSON.stringify(router.query)}</div>
-        <div style={{ margin: "200px" }}>{data.join(",")}</div>
+        <div className={styles.article_box}>
+          <aside className={styles.aside}>
+            {data_asider.data.map((item) => {
+              if (item.type == "file") {
+                return (
+                  <Link
+                    href={"/doc/" + item.slug}
+                    key={item.name}
+                    className={[styles.aside_file, router.query.slug.join(",") === item.slug ? styles.active : ""].join(" ")}
+                  >
+                    {item.title}
+                  </Link>
+                );
+              } else {
+                return (
+                  <div key={item.name} className={styles.aside_dir}>
+                    <div className={styles.aside_dir_head}>
+                      <span>{item.dir}</span>
+                      <svg
+                        width="20px"
+                        height="20px"
+                        stroke-width="1.5"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        color="#000000"
+                      >
+                        <path
+                          d="M9 6l6 6-6 6"
+                          stroke="#000000"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                    </div>
+                    {item.files.map((f) => (
+                      <Link
+                        href={"/doc/" + item.dir + "/" + f.slug}
+                        key={f.slug}
+                        className={[styles.aside_file, router.query.slug.join(",") === (item.dir + ',' + f.slug) ? styles.active : ""].join(" ")}
+                      >
+                        {f.title}
+                      </Link>
+                    ))}
+                  </div>
+                );
+              }
+            })}
+          </aside>
+          <article className={styles.article}>
+            {/*  */}
+            { JSON.stringify(router.query.slug.join(","))}
+            { }
+          </article>
+        </div>
       </Layout>
     </>
   );
@@ -17,20 +73,19 @@ function DOCPages({ data }) {
 
 export async function getStaticPaths() {
   const paths = await get_doc_paths();
-  console.log(JSON.stringify(paths));
   return {
     paths,
     fallback: false,
   };
 }
 
-export function getStaticProps({ params }) {
+export async function getStaticProps({ params }) {
+  const data_asider = await get_docs_info();
   return {
     props: {
-      data: params.slug,
+      data_asider,
     },
   };
 }
 
 export default DOCPages;
-

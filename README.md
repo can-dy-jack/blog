@@ -8,7 +8,7 @@
 
 
 ## markdown规范
-### front-matter 规范
+### blog front-matter 规范
 - img
 - imgHeight
 - color
@@ -18,7 +18,9 @@
 - tag
 - cate
 
-
+### doc front-matter 规范
+- **title**
+- **slug**
 
 <!-- - [remark扩展](https://github.com/remarkjs/remark/blob/main/doc/plugins.md#list-of-plugins) -->
 

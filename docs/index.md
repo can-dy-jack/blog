@@ -1,6 +1,7 @@
 ---
-title: index
-slug: index
+title: 主页
+slug: /
 ---
+
 index
 
