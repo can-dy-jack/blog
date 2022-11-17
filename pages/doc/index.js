@@ -14,8 +14,8 @@ function DocIndex({ data_asider, data }) {
             if (item.type == "file") {
               return (
                 <Link
-                  href={"/doc/" + item.slug}
-                  key={item.name}
+                  href={item.slug}
+                  key={item.title}
                   className={[styles.aside_file, item.slug === '/' ? styles.active : ' '].join(" ")}
                 >
                   {item.title}
@@ -23,13 +23,13 @@ function DocIndex({ data_asider, data }) {
               );
             } else {
               return (
-                <div key={item.name} className={styles.aside_dir}>
+                <div key={item.dir} className={styles.aside_dir}>
                   <div className={styles.aside_dir_head}>
                     <span>{item.dir}</span>
                     <svg
                       width="20px"
                       height="20px"
-                      stroke-width="1.5"
+                      strokeWidth="1.5"
                       viewBox="0 0 24 24"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -38,9 +38,9 @@ function DocIndex({ data_asider, data }) {
                       <path
                         d="M9 6l6 6-6 6"
                         stroke="#000000"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       ></path>
                     </svg>
                   </div>

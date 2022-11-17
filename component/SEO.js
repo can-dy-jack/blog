@@ -20,8 +20,8 @@ export default function SEO({ title, description, keywords }) {
     )
 }
 SEO.propTypes = {
-    title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
+    title: PropTypes.string,
+    description: PropTypes.string,
     keywords: PropTypes.arrayOf(PropTypes.string)
 }
 SEO.defaultProps = {
