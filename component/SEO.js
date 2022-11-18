@@ -9,7 +9,7 @@ export default function SEO({ title, description, keywords }) {
             <title>{ title + "-" + config.title }</title>
             <meta name="description" content={ description } />
             <meta name="keywords" content={keywords.join(",")} />
-            <link rel="icon" href="/logo.jpg" />
+            <link rel="icon" href="/blog/logo.jpg" />
             <meta property="og:type" content="blog" />
             <meta property="og:title" content={ title + '-' + config.title } />
             <meta property="og:description" content={ description } />

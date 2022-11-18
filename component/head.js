@@ -9,7 +9,7 @@ function PostHead({}) {
             <div className={styles.logo}>
                 <Link href="/">
                     <span>
-                        <Image src="/logo.jpg" alt="logo"
+                        <Image src="/blog/logo.jpg" alt="logo"
                         height={40}
                         width={40} />
                     </span>
