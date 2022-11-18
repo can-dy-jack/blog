@@ -24,5 +24,13 @@ const mdx = withMDX({
 })
 module.exports = {
   ...mdx,
-  basePath: "/blog"
+  basePath: "/blog",
+  images: {
+    unoptimized: true,
+  },
 };
+
+// Error: Image Optimization using Next.js' default loader is not compatible with `next export`.
+//   Possible solutions:
+//     - Use `next start` to run a server, which includes the Image Optimization API.
+//     - Configure `images.unoptimized = true` in `next.config.js` to disable the Image Optimization API.
