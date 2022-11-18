@@ -22,11 +22,13 @@ body {
   --select: #48c0a3;
 
   --font: #232323;
-  --head-bg: #fff;
+  --head-bg: rgba(255, 255, 255, 0.1);
   --foot-bg: #faf8fe;
   --bg: #fff;
   --index-head-bg: var(--main);
   --border: #eee;
+  --index-bg: radial-gradient(circle at top right, #666, #235678),
+  radial-gradient(circle at top left, #666, var(--index-head-bg));
 }
 
 a {
@@ -41,7 +43,7 @@ img {
   max-width: 100%;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
@@ -51,12 +53,29 @@ img {
   }
   :root {
     --font: #fff;
-    --head-bg: #1c1e21;
+    --head-bg: rgba(28, 30, 33, .1);
     --foot-bg: #1c1e21;
     --bg: #1b1b1b;
     --index-head-bg: var(--main-dark);
     --border: #555;
+    --index-bg: radial-gradient(circle at top right, #222, #133d58),
+  radial-gradient(circle at top left, #222, var(--index-head-bg));
   }
+} */
+.dark {
+  color: var(--font);
+  background: var(--bg);
+  --font: #fff;
+  --head-bg: rgba(28, 30, 33, .1);
+  --foot-bg: #1c1e21;
+  --bg: #1b1b1b;
+  --index-head-bg: var(--main-dark);
+  --border: #555;
+  --index-bg: radial-gradient(circle at top right, #222, #133d58), radial-gradient(circle at top left, #222, var(--index-head-bg));
+}
+
+* {
+  transition: background 0.25s ease;
 }
 ::selection {
   background-color: var(--select);
@@ -120,3 +139,12 @@ table tbody tr td {
 .md * {
   scroll-margin-top: 60px;
 }
+
+.hidden {
+  transform: translateY(50px);
+  opacity: 0;
+}
+.expand {
+  transform: translateY(-40px);
+}
+

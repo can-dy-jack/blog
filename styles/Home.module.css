@@ -1,71 +1,75 @@
 .head {
-    background-color: var(--index-head-bg);
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-family: 楷体, 宋体, microsoft, sans-serif;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 楷体, 宋体, microsoft, sans-serif;
+
+  background-color: var(--index-head-bg);
+  background: var(--index-bg);
+  background-blend-mode: screen;
+  /* color: #fff; */
 }
-.head>* {
-    margin: 0;
-    padding: 0;
+.head > * {
+  margin: 0;
+  padding: 0;
 }
 .title {
-    font-size: 3rem;
-    font-weight: 600;
-    margin: 20px;
+  font-size: 3rem;
+  font-weight: 600;
+  margin: 20px;
 }
 .subtitle {
-    font-size: 1.4rem;
-    margin: 10px;
+  font-size: 1.4rem;
+  margin: 10px;
 }
 .btn {
-    margin: 10px;
+  margin: 10px;
 }
 .btn button {
-    padding: 6px 18px;
-    background-color: #ebedf0;
-    font-size: 1.4rem;
-    cursor: pointer;
-    border-radius: 6px;
-    outline: none;
-    border: none;
-    transition: all .3s ease-out;
-    margin: 5px;
+  padding: 6px 18px;
+  background-color: #ebedf0;
+  font-size: 1.4rem;
+  cursor: pointer;
+  border-radius: 6px;
+  outline: none;
+  border: none;
+  transition: all 0.3s ease-out;
+  margin: 5px;
 }
 .btn button:hover {
-    background-color: #d4d5d8;
+  background-color: #d4d5d8;
 }
 .btn button a {
-    color: #232323;
+  color: #232323;
 }
 /* indexinfo styles */
 .indexinfo {
-    /* background-color: #222; */
-    padding: 50px 30px;
-    width: 100%;
-    box-sizing: border-box;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 20px;
+  /* background-color: #222; */
+  padding: 50px 30px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 20px;
 }
 .indexinfoitem {
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 /* indexinfo styles end */
 /* mdx styles */
 .mdx {
-    width: 100%;
-    box-sizing: border-box;
-    /* FIXME */
-    padding: 30px 20%;
+  width: 100%;
+  box-sizing: border-box;
+  /* FIXME */
+  padding: 30px 20%;
 }
 
 /* mdx styles end */

@@ -1,0 +1,30 @@
+.function_box {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+.function_btns {
+    background-color: var(--bg);
+    border: 2px solid #444;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 5px;
+    transition: transform 0.5s linear, opacity 0.5s linear;
+
+    overflow: hidden;
+}
+.function_btns .function_part {
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    text-align: center;
+    /* transform: translateY(-40px); */
+    font-size: 1rem;
+}
+.function_btns .function_part svg {
+    margin-top: 8px;
+}
+
+

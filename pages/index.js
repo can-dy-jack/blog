@@ -7,6 +7,7 @@ import Index from "../file/index.mdx";
 import Image from 'next/image'
 
 export default function Home() {
+
   return (
     <>
       <SEO title="主页" keywords={["主页", "blog"]}></SEO>

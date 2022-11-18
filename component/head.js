@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./style/head.module.css"
 
-function PostHead({}) {
+function PostHead() {
     return (
         <header className={styles.header}>
             <div className={styles.logo}>
@@ -11,7 +11,10 @@ function PostHead({}) {
                     <span>
                         <Image src="/blog/logo.jpg" alt="logo"
                         height={40}
-                        width={40} />
+                        width={40}
+                        style={{
+                            borderRadius: "50%"
+                        }} />
                     </span>
                     <span>{ config.title }</span>
                 </Link>
