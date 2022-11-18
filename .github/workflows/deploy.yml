@@ -19,11 +19,4 @@ jobs:
          
       - run: npm install --frozen-lockfile
       - run: npm run build
-      - run: npm run export
-
-      - name: deploy
-        uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.ref == 'refs/heads/main' }}
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out
+      - run: npm run start
