@@ -28,7 +28,7 @@ export default function Home() {
           <div className={styles.indexinfoitem}>
             <span>
               <Image 
-                src="/img/svg404/2.svg" 
+                src="/blog/img/svg404/2.svg" 
                 alt="info-1"
                 height={220}
                 width={220}
@@ -40,7 +40,7 @@ export default function Home() {
           <div className={styles.indexinfoitem}>
             <span>
               <Image 
-              src="/img/svg404/12.svg" 
+              src="/blog/img/svg404/12.svg" 
               alt="info-1"
               height={220}
               width={220}
@@ -52,7 +52,7 @@ export default function Home() {
           <div className={styles.indexinfoitem}>
             <span>
               <Image 
-              src="/img/svg404/22.svg" 
+              src="/blog/img/svg404/22.svg" 
               alt="info-1"
               height={220}
               width={220} />

@@ -11,7 +11,7 @@ function BlogIndex({ allBlogsData }) {
         <Layout>
             <SEO title="博客列表" keywords={["博客列表", "blogs"]}></SEO>
             <section className={s.head}>
-                <Image src="/img/svg404/27.svg" alt="blog-svg" 
+                <Image src="/blog/img/svg404/27.svg" alt="blog-svg" 
                 height={400}
                 width={500} />
                 <h1>文章列表</h1>

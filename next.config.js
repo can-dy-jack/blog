@@ -17,7 +17,12 @@ const withMDX = require('@next/mdx')({
     // providerImportSource: "@mdx-js/react",
   },
 })
-module.exports = withMDX({
+const mdx = withMDX({
   // Append the default value with md extensions
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
-});
+  
+})
+module.exports = {
+  ...mdx,
+  basePath: "/blog"
+};

@@ -11,7 +11,7 @@ function BlogPages({ data, allBlogs }) {
         <SEO title={data.title} keywords={["博客列表", data.slug, data.title]}></SEO>
         <Layout className={styles.main}>
             <section className={styles.article_info} style={{
-                    "--bg": data.img ? `url(${data.img})` : 'url("/img/default.jpg")',
+                    "--bg": data.img ? `url(${data.img})` : 'url("/blog/img/default.jpg")',
                     "--h": `${data.imgHeight || "300px"}`,
                     color: `${data.color || "inherit"}`,
                 }}>
