@@ -4,6 +4,7 @@ import Layout from "../component/layout";
 import config from "../config.js";
 import styles from "../styles/Home.module.css";
 import Index from "../file/index.mdx";
+import Image from 'next/image'
 
 export default function Home() {
   return (
@@ -26,21 +27,35 @@ export default function Home() {
         <section className={styles.indexinfo}>
           <div className={styles.indexinfoitem}>
             <span>
-              <img src="/img/svg404/2.svg" alt="info-1" />
+              <Image 
+                src="/img/svg404/2.svg" 
+                alt="info-1"
+                height={220}
+                width={220}
+              />
             </span>
             <h3>前端相关知识</h3>
             <p>这里是我的最新个人博客，我将在这里分享我在学习前端的过程中总结的知识和技能，分享给大家。</p>
           </div>
           <div className={styles.indexinfoitem}>
             <span>
-              <img src="/img/svg404/12.svg" alt="info-1" />
+              <Image 
+              src="/img/svg404/12.svg" 
+              alt="info-1"
+              height={220}
+              width={220}
+               />
             </span>
             <h3>前端相关知识</h3>
             <p>在这里，我也将总结我之前在其它平台发布的和以后将要发布的文章</p>
           </div>
           <div className={styles.indexinfoitem}>
             <span>
-              <img src="/img/svg404/22.svg" alt="info-1" />
+              <Image 
+              src="/img/svg404/22.svg" 
+              alt="info-1"
+              height={220}
+              width={220} />
             </span>
             <h3>前端相关知识</h3>
             <p>在这里，我也将总结我之前在其它平台发布的和以后将要发布的文章</p>

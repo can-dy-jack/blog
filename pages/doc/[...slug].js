@@ -11,17 +11,22 @@ function DOCPages({ data_asider, data }) {
   return (
     <>
       <Layout>
-        <SEO/>  {/* TODO */}
-        
+        <SEO title={data.title} />
+
         <div className={styles.article_box}>
           <aside className={styles.aside}>
             {data_asider.data.map((item) => {
               if (item.type == "file") {
                 return (
                   <Link
-                    href={item.slug}
+                    href={"/doc/" + (item.slug === "/" ? "" : item.slug)}
                     key={item.title}
-                    className={[styles.aside_file, router.query.slug.join(",") === item.slug ? styles.active : ""].join(" ")}
+                    className={[
+                      styles.aside_file,
+                      router.query.slug.join(",") === item.slug
+                        ? styles.active
+                        : "",
+                    ].join(" ")}
                   >
                     {item.title}
                   </Link>
@@ -53,7 +58,13 @@ function DOCPages({ data_asider, data }) {
                       <Link
                         href={"/doc/" + item.dir + "/" + f.slug}
                         key={f.slug}
-                        className={[styles.aside_file, router.query.slug.join(",") === (item.dir + ',' + f.slug) ? styles.active : ""].join(" ")}
+                        className={[
+                          styles.aside_file,
+                          router.query.slug.join(",") ===
+                          item.dir + "," + f.slug
+                            ? styles.active
+                            : "",
+                        ].join(" ")}
                       >
                         {f.title}
                       </Link>
@@ -65,10 +76,12 @@ function DOCPages({ data_asider, data }) {
           </aside>
           <section className={styles.article}>
             <h1>{data.title}</h1>
-            <article className="md" dangerouslySetInnerHTML={{
-                __html: data.contentHtml
-            }}>
-            </article>
+            <article
+              className="md"
+              dangerouslySetInnerHTML={{
+                __html: data.contentHtml,
+              }}
+            ></article>
           </section>
         </div>
       </Layout>
@@ -90,7 +103,7 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       data_asider,
-      data
+      data,
     },
   };
 }

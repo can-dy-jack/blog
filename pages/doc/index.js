@@ -14,7 +14,7 @@ function DocIndex({ data_asider, data }) {
             if (item.type == "file") {
               return (
                 <Link
-                  href={item.slug}
+                  href={"/doc/" + (item.slug === '/' ? "" : item.slug)}
                   key={item.title}
                   className={[styles.aside_file, item.slug === '/' ? styles.active : ' '].join(" ")}
                 >
@@ -71,7 +71,7 @@ function DocIndex({ data_asider, data }) {
 
 export async function getStaticProps() {
   const data_asider = await get_docs_info();
-  const data = await get_doc_data(["", "", ""]);
+  const data = await get_doc_data(["/"]);
   return {
     props: {
       data_asider,

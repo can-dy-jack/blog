@@ -6,7 +6,7 @@ export default function SEO({ title, description, keywords }) {
     return (
         <Head>
             <>
-            <title>{ title } - { config.title }</title>
+            <title>{ title + "-" + config.title }</title>
             <meta name="description" content={ description } />
             <meta name="keywords" content={keywords.join(",")} />
             <link rel="icon" href="/logo.jpg" />
