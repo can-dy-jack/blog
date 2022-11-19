@@ -3,11 +3,13 @@ import styles from "./style/function.module.css";
 
 function Functions() {
     const [progress, updateProgress] = useState("0%");
+    const [max, updateMax] = useState(100);
     const toTop = useRef();
+    const dark = useRef();
 
     useEffect(() => {
-        let max = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         window.onscroll = () => {
+            updateMax(document.documentElement.scrollHeight - document.documentElement.clientHeight)
             let scroll = document.documentElement.scrollTop;
             updateProgress(
                 '' + Math.floor(scroll/max*100) + '%'
@@ -20,9 +22,9 @@ function Functions() {
             }
         }
         window.onresize = () => {
-            max = document.documentElement.scrollHeight - document.documentElement.clientHeight
+            updateMax(document.documentElement.scrollHeight - document.documentElement.clientHeight);
         };
-    }, []);
+    }, [max]);
 
     return (
         <div className={styles.function_box}>
@@ -46,14 +48,18 @@ function Functions() {
                     //     document.body.classList.add("dark")
                     // }
                     if(document.body.classList.contains("dark")) {
-                        document.body.classList.remove("dark")
+                        document.body.classList.remove("dark");
+                        dark.current.style.display = "inline";
+                        document.querySelector("html").style.setProperty("color-scheme", "light")
                     } else {
-                        document.body.classList.add("dark")
+                        document.body.classList.add("dark");
+                        dark.current.style.display = "none";
+                        document.querySelector("html").style.setProperty("color-scheme", "dark")
                     }
                 }
             }>
                 <div className={styles.function_part}>
-                    <svg width="24px" height="24px" strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000">
+                    <svg ref={dark} width="24px" height="24px" strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000">
                         <path d="M12 18a6 6 0 100-12 6 6 0 000 12zM22 12h1M12 2V1M12 23v-1M20 20l-1-1M20 4l-1 1M4 20l1-1M4 4l1 1M1 12h1" stroke="var(--font)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
                     </svg>
 

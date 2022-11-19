@@ -26,5 +26,19 @@ import AboutTemplate from "../component/about"
     <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=can-dy-jack&theme=swift&layout=compact" alt="Top Langs"/>
 </div>
 
+import {
+  LiveProvider,
+  LiveEditor,
+  LiveError,
+  LivePreview
+} from 'react-live'
+
+<LiveProvider code="<strong>Hello World!</strong>">
+  <LiveEditor className="live" />
+  <LiveError />
+  <LivePreview />
+</LiveProvider>
+
+
 
 export default ({ children }) => <AboutTemplate>{ children }</AboutTemplate>
