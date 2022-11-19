@@ -17,6 +17,9 @@ html {
   --main: #ff7500;
   --main-blur1: rgba(255, 117, 0, .1);
   --main-blur2: rgba(255, 117, 0, .2);
+  --main-blur5: rgba(255, 117, 0, .5);
+  --main-blur6: rgba(255, 117, 0, .6);
+  --main-blur7: rgba(255, 117, 0, .7);
   /* 琥珀 */
   --main-dark: #ca6924;
   /* 油绿 */
@@ -98,6 +101,9 @@ pre {
   position: relative;
   border-radius: 5px;
 }
+pre.prism-code {
+  background-color: #322a38;
+}
 
 /* markdwon styles */
 blockquote {
@@ -132,6 +138,7 @@ table tbody tr:nth-child(2n) {
 table tbody tr td {
   padding: 5px 10px;
 }
+
 .md * {
   scroll-margin-top: 60px;
 }
@@ -140,7 +147,7 @@ table tbody tr td {
   border: 1px solid var(--main);
   cursor: pointer;
   margin: 5px;
-  padding: 10px 15px;
+  padding: 6px 15px;
   font-size: 1rem;
   border-radius: 5px;
   background: var(--bg);

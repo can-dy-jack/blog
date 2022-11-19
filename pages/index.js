@@ -64,7 +64,9 @@ export default function Home() {
         </section>
 
         <section className={styles.mdx}>
-          <Index />
+          <article className="md">
+            <Index />
+          </article>
         </section>
       </Layout>
     </>

@@ -1,14 +1,12 @@
 ## blog
 
 ### 进行中
-- [x] 脚注 footnote
-- [x] 整理markdown文档
 - [ ] 文章tag 和 cate
 - [ ] 更新footer的链接
 - [ ] 适配移动端
 - [ ] 文章排列顺序
 - [ ] 文章内上下文
-- [ ] 内置runit
+- [ ] 内置runkit
 - [ ] 切换黑暗模式按钮
     - [ ] 写入cookie！
 
