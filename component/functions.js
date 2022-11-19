@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./style/function.module.css";
 
-function Functions() {
+function Functions({ cio }) {
     const [progress, updateProgress] = useState("0%");
     const [max, updateMax] = useState(100);
+    let first = 1;
     const toTop = useRef();
     const dark = useRef();
 
@@ -26,6 +27,50 @@ function Functions() {
         };
     }, [max]);
 
+
+
+    function change_mode(e)  {
+        if(document.body.classList.contains("dark")) {
+            document.body.classList.remove("dark");
+            dark.current.style.display = "inline";
+            document.querySelector("html").style.setProperty("color-scheme", "light")
+        } else {
+            document.body.classList.add("dark");
+            dark.current.style.display = "none";
+            document.querySelector("html").style.setProperty("color-scheme", "dark")
+        }
+    }
+    useEffect(() => {
+        if(cio && first == 1) {
+            if(document.cookie.includes("dark:open")) {
+                document.body.classList.add("dark");
+                dark.current.style.display = "none";
+                document.querySelector("html").style.setProperty("color-scheme", "dark");
+            } else {
+                document.body.classList.remove("dark");
+                dark.current.style.display = "inline";
+                document.querySelector("html").style.setProperty("color-scheme", "light");
+            }
+            first = 2;
+        }
+    }, [first])
+    function cookie_change_mode(e)  {
+        if(!document.cookie.includes("dark")) {
+            document.cookie = "dark:open"
+        }
+        if(document.cookie.includes("dark:open")) {
+            document.body.classList.remove("dark");
+            dark.current.style.display = "inline";
+            document.querySelector("html").style.setProperty("color-scheme", "light")
+            document.cookie = "dark:close"
+        } else {
+            document.body.classList.add("dark");
+            dark.current.style.display = "none";
+            document.querySelector("html").style.setProperty("color-scheme", "dark");
+            document.cookie = "dark:open"
+        }
+    }
+
     return (
         <div className={styles.function_box}>
             <div ref={toTop} className={[styles.function_btns, "hidden"].join(" ")} onClick = {
@@ -41,23 +86,7 @@ function Functions() {
                     <span>{ progress }</span>
                 </div>
             </div>
-            <div className={styles.function_btns} onClick={
-                () => {
-                    // const scheme = window.matchMedia('(prefers-color-scheme: dark)');
-                    // if (scheme.matches) { 
-                    //     document.body.classList.add("dark")
-                    // }
-                    if(document.body.classList.contains("dark")) {
-                        document.body.classList.remove("dark");
-                        dark.current.style.display = "inline";
-                        document.querySelector("html").style.setProperty("color-scheme", "light")
-                    } else {
-                        document.body.classList.add("dark");
-                        dark.current.style.display = "none";
-                        document.querySelector("html").style.setProperty("color-scheme", "dark")
-                    }
-                }
-            }>
+            <div className={styles.function_btns} onClick={cio ? cookie_change_mode : change_mode}>
                 <div className={styles.function_part}>
                     <svg ref={dark} width="24px" height="24px" strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000">
                         <path d="M12 18a6 6 0 100-12 6 6 0 000 12zM22 12h1M12 2V1M12 23v-1M20 20l-1-1M20 4l-1 1M4 20l1-1M4 4l1 1M1 12h1" stroke="var(--font)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
