@@ -4,10 +4,10 @@ import Layout from "../component/layout";
 import config from "../config.js";
 import styles from "../styles/Home.module.css";
 import Index from "../file/index.mdx";
-import Image from 'next/image'
+import Image from "next/image";
+import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
 
 export default function Home() {
-
   return (
     <>
       <SEO title="主页" keywords={["主页", "blog"]}></SEO>
@@ -28,35 +28,38 @@ export default function Home() {
         <section className={styles.indexinfo}>
           <div className={styles.indexinfoitem}>
             <span>
-              <Image 
-                src="/blog/img/svg404/2.svg" 
+              <Image
+                src="/blog/img/svg404/2.svg"
                 alt="info-1"
                 height={220}
                 width={220}
               />
             </span>
             <h3>前端相关知识</h3>
-            <p>这里是我的最新个人博客，我将在这里分享我在学习前端的过程中总结的知识和技能，分享给大家。</p>
+            <p>
+              这里是我的最新个人博客，我将在这里分享我在学习前端的过程中总结的知识和技能，分享给大家。
+            </p>
           </div>
           <div className={styles.indexinfoitem}>
             <span>
-              <Image 
-              src="/blog/img/svg404/12.svg" 
-              alt="info-1"
-              height={220}
-              width={220}
-               />
+              <Image
+                src="/blog/img/svg404/12.svg"
+                alt="info-1"
+                height={220}
+                width={220}
+              />
             </span>
             <h3>前端相关知识</h3>
             <p>在这里，我也将总结我之前在其它平台发布的和以后将要发布的文章</p>
           </div>
           <div className={styles.indexinfoitem}>
             <span>
-              <Image 
-              src="/blog/img/svg404/22.svg" 
-              alt="info-1"
-              height={220}
-              width={220} />
+              <Image
+                src="/blog/img/svg404/22.svg"
+                alt="info-1"
+                height={220}
+                width={220}
+              />
             </span>
             <h3>前端相关知识</h3>
             <p>在这里，我也将总结我之前在其它平台发布的和以后将要发布的文章</p>
@@ -66,6 +69,34 @@ export default function Home() {
         <section className={styles.mdx}>
           <article className="md">
             <Index />
+          </article>
+          <article>
+            <LiveProvider
+              code={`function Clock() {
+  return (
+    <div>
+      <h3>现在的时间是 {new Date().toLocaleTimeString()}。</h3>
+    </div>
+  );
+}`}
+            >
+              <LiveEditor
+                className="live"
+                style={{
+                  background: "#322a38",
+                  borderRadius: "5px",
+                }}
+              />
+              <LiveError />
+              <LivePreview
+                className="live-preview"
+                style={{
+                  padding: "10px",
+                  background: "var(--foot-bg)",
+                  margin: "10px 0",
+                }}
+              />
+            </LiveProvider>
           </article>
         </section>
       </Layout>
