@@ -23,7 +23,9 @@ const withMDX = RemarkMDX({
     ],
   },
 })
-const mdx = withMDX();
+const mdx = withMDX({
+  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+});
 
 /**
  * @type {import('next').NextConfig}

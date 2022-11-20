@@ -1,8 +1,10 @@
 import '../styles/globals.css'
 import "../styles/highlight.css"
+import "../styles/animate.css"
 import Functions from '../component/functions'
 import ConfirmPopup from "../component/cookie"
 import { useEffect, useState } from 'react'
+import { CSSTransition } from 'react-transition-group';
 
 function MyApp({ Component, pageProps }) {
   const [cookie_is_open, set_cooie_open] = useState(false);
@@ -31,9 +33,14 @@ function MyApp({ Component, pageProps }) {
       <Component {...pageProps} />
       <Functions cio={cookie_is_open} />
 
-      {
-        temp ? <ConfirmPopup func={temp_close_ConfirmPopup} setRight={ setRight }/> : null
-      }
+      <CSSTransition
+        in={temp}
+        timeout={500}
+        classNames={'fade'}
+        unmountOnExit={true}
+      >
+        <ConfirmPopup func={temp_close_ConfirmPopup} setRight={ setRight }/>
+      </CSSTransition>
     </>
   )
 }
