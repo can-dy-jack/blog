@@ -1,5 +1,5 @@
 import RemarkMDX from '@next/mdx';
-import emoji from "remark-emoji"
+import emoji from "remark-emoji";
 import remarkGfm from 'remark-gfm';
 import remarkMath from "remark-math";
 import remarkRehype from "remark-rehype";

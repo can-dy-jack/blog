@@ -8,7 +8,7 @@ import { CSSTransition } from 'react-transition-group';
 
 function MyApp({ Component, pageProps }) {
   const [cookie_is_open, set_cooie_open] = useState(false);
-  const [temp, set_temp] = useState(true);
+  const [temp, set_temp] = useState(false);
   const setRight = (open = true) => {
     if(open) {
       set_cooie_open(true)
@@ -22,6 +22,9 @@ function MyApp({ Component, pageProps }) {
     if(document.cookie.includes("dark")) {
       set_temp(false);
     }
+    setTimeout(() => {
+      set_temp(true);
+    }, 1000);
   }, [])
 
   const temp_close_ConfirmPopup = () => {
