@@ -37,9 +37,5 @@ const mdx = withMDX({
 const nextConfig = {
   ...mdx,
   basePath: "/blog",
-  images: {
-    // 关闭图片优化， - 否则在GitHub上部署静态时会报错
-    unoptimized: true,
-  },
 };
 export default nextConfig;
