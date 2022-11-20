@@ -1,4 +1,4 @@
-/** @type {import('next').NextConfig} */
+
 import RemarkMDX from "@next/mdx";
 // glugins
 import emoji from "remark-emoji"
@@ -31,7 +31,6 @@ const mdx = withMDX({
 export default {
   ...mdx,
   basePath: "/blog",
-  reactStrictMode: true,
   images: {
     // 关闭图片优化， - 否则在GitHub上部署静态时会报错
     unoptimized: true,
