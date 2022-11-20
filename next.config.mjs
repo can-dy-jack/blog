@@ -1,4 +1,3 @@
-
 import RemarkMDX from "@next/mdx";
 // glugins
 import emoji from "remark-emoji"
@@ -27,7 +26,11 @@ const mdx = withMDX({
   // Append the default value with md extensions
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
 })
-export const config = {
+
+/**
+ * @type {import('next').NextConfig}
+ */
+const nextConfig = {
   ...mdx,
   basePath: "/blog",
   images: {
@@ -35,3 +38,4 @@ export const config = {
     unoptimized: true,
   },
 };
+export default nextConfig;
