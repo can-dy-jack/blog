@@ -29,7 +29,7 @@ const mdx = withMDX();
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
-  mdx,
+  ...mdx,
   basePath: "/blog",
   images: {
     unoptimized: true,
