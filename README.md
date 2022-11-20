@@ -9,6 +9,7 @@
 - [ ] [React live]()
 - [x] 切换黑暗模式按钮
     - [x] 写入cookie！
+- [ ] cookie组件注销时动画
 
 
 
