@@ -26,9 +26,8 @@ const withMDX = RemarkMDX({
 const mdx = withMDX({
   // Append the default value with md extensions
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
-  
 })
-export default {
+export const config = {
   ...mdx,
   basePath: "/blog",
   images: {
