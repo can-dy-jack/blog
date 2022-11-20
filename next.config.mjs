@@ -1,5 +1,4 @@
-import RemarkMDX from "@next/mdx";
-// glugins
+import RemarkMDX from '@next/mdx';
 import emoji from "remark-emoji"
 import remarkGfm from 'remark-gfm';
 import remarkMath from "remark-math";
@@ -22,14 +21,9 @@ const withMDX = RemarkMDX({
       rehypeMathjax,
       rehypeStringify
     ],
-    // If you use `MDXProvider`, uncomment the following line.
-    // providerImportSource: "@mdx-js/react",
   },
 })
-const mdx = withMDX({
-  // Append the default value with md extensions
-  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
-})
+const mdx = withMDX();
 
 /**
  * @type {import('next').NextConfig}
