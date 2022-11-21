@@ -5,7 +5,6 @@ import config from "../config.js";
 import styles from "../styles/Home.module.css";
 import Index from "../file/index.mdx";
 import Image from "next/image";
-import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
 
 export default function Home() {
   return (
@@ -69,34 +68,6 @@ export default function Home() {
         <section className={styles.mdx}>
           <article className="md">
             <Index />
-          </article>
-          <article>
-            <LiveProvider
-              code={`function Clock() {
-  return (
-    <div>
-      <h3>现在的时间是 {new Date().toLocaleTimeString()}。</h3>
-    </div>
-  );
-}`}
-            >
-              <LiveEditor
-                className="live"
-                style={{
-                  background: "#322a38",
-                  borderRadius: "5px",
-                }}
-              />
-              <LiveError />
-              <LivePreview
-                className="live-preview"
-                style={{
-                  padding: "10px",
-                  background: "var(--foot-bg)",
-                  margin: "10px 0",
-                }}
-              />
-            </LiveProvider>
           </article>
         </section>
       </Layout>

@@ -45,6 +45,7 @@ function Functions({ cio }) {
             if(document.cookie.includes("dark:open")) {
                 document.body.classList.add("dark");
                 dark.current.style.display = "none";
+                // document.documentElement => 有个DOCTYPE 声明
                 document.querySelector("html").style.setProperty("color-scheme", "dark");
             } else {
                 document.body.classList.remove("dark");

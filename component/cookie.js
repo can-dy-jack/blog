@@ -1,15 +1,6 @@
 import PropTypes from 'prop-types';
-import { useEffect, useRef } from 'react';
 
 function ConfirmPopup({ setRight, func }) {
-    const root = useRef();
-
-    useEffect(() => {
-        return () => {
-            // root.current.style.animation = "componnet_move_out 1s ease-in-out;"
-            console.log(root)
-        } 
-    }, [])
 
     return (
         <section style={{
@@ -23,7 +14,7 @@ function ConfirmPopup({ setRight, func }) {
             border: "3px solid #444",
             textAlign: "center",
             zIndex: "200"
-        }} ref={root}>
+        }}>
             <div style={{
                 fontSize: "1.2rem"
             }}>本站是否可以使用Cookie？</div>
