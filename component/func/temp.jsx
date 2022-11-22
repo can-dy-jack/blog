@@ -1,3 +1,5 @@
+import React from "react";
+
 export default () => {
     const [likes, increaseLikes] = React.useState(0);
 
