@@ -5,6 +5,7 @@ import config from "../config.js";
 import styles from "../styles/Home.module.css";
 import Index from "../file/index.mdx";
 import Image from "next/image";
+import ReactLiveMdx from "../component/func/live";
 
 export default function Home() {
   return (
@@ -69,6 +70,29 @@ export default function Home() {
           <article className="md">
             <Index />
           </article>
+          <ReactLiveMdx code={`() => {
+    const [likes, increaseLikes] = React.useState(0);
+  
+    return (
+      <>
+        <p>
+          {\`give me $\{likes\} likes !\`}
+        </p>
+        <button className='btn' onClick={() => increaseLikes(likes + 1)}>Like</button>
+      </>
+    );
+}`} scope={() => {
+  const [likes, increaseLikes] = React.useState(0);
+
+  return (
+    <>
+      <p>
+        {`${likes} likes`}
+      </p>
+      <button className='btn' onClick={() => increaseLikes(likes + 1)}>Like</button>
+    </>
+  );
+} } />
         </section>
       </Layout>
     </>

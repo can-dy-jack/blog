@@ -1,21 +1,11 @@
-import { useEffect } from "react";
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
 
-function ReactLiveMdx({ children }) {
-    useEffect(() => {
-        console.log(children)
-    })
-
+function ReactLiveMdx({ code, scope }) {
   return (
     <>
     <LiveProvider
-      code={children ? children : `function Clock() {
-return (
-    <div>
-      <h3>现在的时间是 {new Date().toLocaleTimeString()}。</h3>
-    </div>
-  );
-}`}
+      code={code}
+      scope={scope}
     >
       <LiveEditor
         className="live"
@@ -34,8 +24,6 @@ return (
         }}
       />
     </LiveProvider>
-    
-    {children}
     </>
   );
 }
