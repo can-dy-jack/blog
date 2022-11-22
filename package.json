@@ -1,6 +1,6 @@
 {
   "name": "blog",
-  "version": "0.1.12",
+  "version": "0.1.21",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -30,6 +30,7 @@
     "remark-emoji": "^3.0.2",
     "remark-gfm": "^3.0.1",
     "remark-math": "^5.1.1",
+    "remark-mermaidjs": "^4.0.0",
     "remark-rehype": "^10.1.0"
   }
 }
