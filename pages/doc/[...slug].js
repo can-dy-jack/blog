@@ -1,9 +1,10 @@
-import { useRouter } from "next/router";
-import Layout from "../../component/layout";
-import SEO from "../../component/SEO";
-import { get_doc_paths, get_docs_info, get_doc_data } from "../../lib/getDoc";
+import { useRouter } from "next/router"
+import Layout from "../../component/layout"
+import SEO from "../../component/SEO"
+import { get_doc_paths, get_docs_info, get_doc_data } from "../../lib/getDoc"
 import styles from "../../styles/docs.module.css";
-import Link from "next/link";
+import Link from "next/link"
+import { CSSTransition, SwitchTransition } from "react-transition-group"
 
 function DOCPages({ data_asider, data }) {
   const router = useRouter();
@@ -75,13 +76,26 @@ function DOCPages({ data_asider, data }) {
             })}
           </aside>
           <section className={styles.article}>
-            <h1>{data.title}</h1>
-            <article
-              className="md"
-              dangerouslySetInnerHTML={{
-                __html: data.contentHtml,
-              }}
-            ></article>
+            
+            <SwitchTransition>
+              <CSSTransition
+                timeout={300}
+                classNames="page"
+                unmountOnExit
+                key={data.slug}
+                >
+                <div className="page">
+                  <h1>{data.title}</h1>
+                  <article
+                    className="md"
+                    dangerouslySetInnerHTML={{
+                      __html: data.contentHtml,
+                    }}
+                  ></article>
+                </div>
+              </CSSTransition>
+            </SwitchTransition>
+            
           </section>
         </div>
       </Layout>

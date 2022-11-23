@@ -23,3 +23,24 @@
   transform-origin: -200px 100px;
 }
 
+/* docs pages */
+.page-enter {
+  opacity: 0;
+  transform: translateY(-100px);
+}
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+.page-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+.page-exit-active {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 300ms, transform 300ms;
+}
+
+
