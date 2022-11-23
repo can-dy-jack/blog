@@ -79,11 +79,11 @@ function DOCPages({ data_asider, data }) {
             <SwitchTransition>
               <CSSTransition
                 timeout={300}
-                classNames="page"
+                classNames={ "page1" }
                 unmountOnExit
                 key={data.slug}
               >
-                <div className="page">
+                <div className={ "page1" }>
                   <h1 className={styles.docs_title}>{data.title}</h1>
                   <article
                     className="md"
