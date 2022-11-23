@@ -120,6 +120,9 @@ blockquote p {
 p {
   line-height: 1.8;
 }
+ul li, ol li {
+  line-height: 1.8;
+}
 table {
   border: 1px solid var(--border);
   padding: 1px;

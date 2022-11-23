@@ -14,9 +14,12 @@ function DocIndex({ data_asider, data }) {
             if (item.type == "file") {
               return (
                 <Link
-                  href={"/doc/" + (item.slug === '/' ? "" : item.slug)}
+                  href={"/doc/" + (item.slug === "/" ? "" : item.slug)}
                   key={item.title}
-                  className={[styles.aside_file, item.slug === '/' ? styles.active : ' '].join(" ")}
+                  className={[
+                    styles.aside_file,
+                    item.slug === "/" ? styles.active : " ",
+                  ].join(" ")}
                 >
                   {item.title}
                 </Link>
@@ -59,10 +62,13 @@ function DocIndex({ data_asider, data }) {
           })}
         </aside>
         <section className={styles.article}>
-          <h1>{data.title}</h1>
-          <article className="md" dangerouslySetInnerHTML={{
-            __html: data.contentHtml
-          }}></article>
+                <h1 className={styles.docs_title}>{data.title}</h1>
+                <article
+                  className="md"
+                  dangerouslySetInnerHTML={{
+                    __html: data.contentHtml,
+                  }}
+                ></article>
         </section>
       </div>
     </Layout>

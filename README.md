@@ -1,12 +1,13 @@
 ## blog
 
 ### 进行中
-- [ ] 文章tag 和 cate
+- [ ] 文章tag 和 cate 等 front-matter扩展
 - [ ] 更新footer的链接
 - [ ] 适配移动端
-- [ ] 文章排列顺序
-- [ ] 文章内上下文
+- [ ] 博客上下文导航
 - [ ] [React live]()
+- [ ] 文章侧边栏
+    - [ ] 排序 + index置顶
 
 
 ## markdown规范
@@ -26,6 +27,3 @@
 
 <!-- - [remark扩展](https://github.com/remarkjs/remark/blob/main/doc/plugins.md#list-of-plugins) -->
 
-
-
-<!-- React 检查地址（#h1) -》 对应的id标签高亮显示！ -->
