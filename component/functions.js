@@ -72,6 +72,16 @@ function Functions({ cio }) {
         }
     }
 
+    useEffect(() => {
+        // 空格控制打开黑暗模式
+        document.onkeydown = (e) => {
+            e.preventDefault();
+            if(e.code === "Space")
+                if(cio) cookie_change_mode()
+                else change_mode()
+        }
+    }, [])
+
     return (
         <div className={styles.function_box}>
             <div ref={toTop} className={[styles.function_btns, "hidden"].join(" ")} onClick = {

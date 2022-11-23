@@ -2,7 +2,6 @@
 
 ### 进行中
 - [ ] 文章tag 和 cate 等 front-matter扩展
-- [ ] 更新footer的链接
 - [ ] 适配移动端
 - [ ] 博客上下文导航
 - [ ] [React live]()
