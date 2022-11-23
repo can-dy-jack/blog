@@ -21,8 +21,12 @@
 - cate
 
 ### doc front-matter 规范
-- **title**
+- **title**                  
 - **slug**
 
 <!-- - [remark扩展](https://github.com/remarkjs/remark/blob/main/doc/plugins.md#list-of-plugins) -->
+
+
+## 快捷键
+- 空格 - 切换黑暗模式
 

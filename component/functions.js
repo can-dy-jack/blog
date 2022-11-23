@@ -75,10 +75,11 @@ function Functions({ cio }) {
     useEffect(() => {
         // 空格控制打开黑暗模式
         document.onkeydown = (e) => {
-            e.preventDefault();
-            if(e.code === "Space")
+            if(e.code === "Space") {
+                e.preventDefault();
                 if(cio) cookie_change_mode()
                 else change_mode()
+            }
         }
     }, [])
 
