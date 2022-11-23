@@ -7,16 +7,29 @@ const config = {
       label: "文档",
       items: [
         {
-          label: "博客",
-          link: "/",
+          label: "JavaScript 基本算法 - 数学",
+          link: "/doc/algorithm/base",
         },
         {
-          label: "HTML",
-          link: "/",
+          label: "函数式编程之递归的几种方式",
+          link: "/doc/javascript/several-recursive-methods-of-functional-programming",
         },
         {
-          label: "React",
-          link: "/",
+          label: "Rust实现斐波那契数列",
+          link: "/doc/Rust/rust-fibonacci",
+        },
+      ],
+    },
+    {
+      label: "博客",
+      items: [
+        {
+          label: "JavaScript 两个变量的值交换的方式及性能",
+          link: "/blog/js-change-var",
+        },
+        {
+          label: "markdwon测试文档",
+          link: "/blog/md-test",
         },
       ],
     },

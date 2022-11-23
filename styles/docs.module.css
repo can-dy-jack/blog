@@ -66,7 +66,7 @@
     left: 0;
     height: 3px;
     width: 100%;
-    background: linear-gradient(to right, red, pink, blue);
+    background: linear-gradient(to right, red, pink, blue, rgb(230, 73, 230), rgb(72, 238, 72));
     border-radius: 5px;
 }
 .article h2:hover::after {
