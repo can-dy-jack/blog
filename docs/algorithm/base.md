@@ -74,7 +74,7 @@ const falsy = x => x === false || x == null || x === 0 || x === 0n || x === "" |
 ```
 
 ## 生成随机数
-随机生成 n-m 之间的整数值
+随机生成 $m-n$ 之间的整数值
 ```js
 // 保证 m < n
 function random(m, n) {
