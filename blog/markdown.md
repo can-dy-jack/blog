@@ -142,7 +142,7 @@ __double underscores__
 ![插画来自https://error404.fun/](/img/svg404/10.svg)
 ```
 
-![插画来自https://error404.fun/](/img/svg404/10.svg)
+![插画来自https://error404.fun/](/blog/img/svg404/10.svg)
 
 ## emoji
 
@@ -164,7 +164,6 @@ equation.
 $$
 L = \frac{1}{2} \rho v^2 S C_L
 $$
-
 
 ## more
 

@@ -63,6 +63,10 @@
   align-items: center;
   text-align: center;
 }
+.info_head {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
 /* indexinfo styles end */
 /* mdx styles */
 .mdx {

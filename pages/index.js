@@ -30,13 +30,13 @@ export default function Home() {
           <div className={styles.indexinfoitem}>
             <span>
               <Image
-                src="/blog/img/svg404/2.svg"
+                src="/blog/img/svg404/27.svg"
                 alt="info-1"
-                height={220}
-                width={220}
+                height={300}
+                width={300}
               />
             </span>
-            <h3>前端相关知识</h3>
+            <div className={styles.info_head}>前端相关知识</div>
             <p>
               这里是我的最新个人博客，我将在这里分享我在学习前端的过程中总结的知识和技能，分享给大家。
             </p>
@@ -44,25 +44,25 @@ export default function Home() {
           <div className={styles.indexinfoitem}>
             <span>
               <Image
-                src="/blog/img/svg404/12.svg"
+                src="/blog/img/svg404/33.svg"
                 alt="info-1"
-                height={220}
-                width={220}
+                height={300}
+                width={300}
               />
             </span>
-            <h3>前端相关知识</h3>
+            <div className={styles.info_head}>个人博客</div>
             <p>在这里，我也将总结我之前在其它平台发布的和以后将要发布的文章</p>
           </div>
           <div className={styles.indexinfoitem}>
             <span>
               <Image
-                src="/blog/img/svg404/22.svg"
+                src="/blog/img/svg404/32.svg"
                 alt="info-1"
-                height={220}
-                width={220}
+                height={300}
+                width={300}
               />
             </span>
-            <h3>前端相关知识</h3>
+            <div className={styles.info_head}>关于我</div>
             <p>在这里，我也将总结我之前在其它平台发布的和以后将要发布的文章</p>
           </div>
         </section>
