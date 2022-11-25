@@ -8,6 +8,26 @@ import { CSSTransition, SwitchTransition } from "react-transition-group";
 
 function DOCPages({ data_asider, data }) {
   const router = useRouter();
+  let pre = null,
+    next = null;
+  for (const asider of data_asider.data) {
+    if (asider.type === "file" && asider.slug === data.slug) {
+      break;
+    } else if (asider.type === "dir") {
+      const len = asider.files.length;
+      for (let i = 0; i < len; i++) {
+        const f = asider.files[i];
+        if (f.slug === data.slug) {
+          if (i > 0) {
+            pre = asider.files[i - 1];
+          }
+          if (i < len - 1) {
+            next = asider.files[i + 1];
+          }
+        }
+      }
+    }
+  }
 
   return (
     <>
@@ -79,11 +99,11 @@ function DOCPages({ data_asider, data }) {
             <SwitchTransition>
               <CSSTransition
                 timeout={300}
-                classNames={ "page1" }
+                classNames={"page1"}
                 unmountOnExit
-                key={data.slug}
+                key={"" + data.slug}
               >
-                <div className={ "page1" }>
+                <div className={"page1"}>
                   <h1 className={styles.docs_title}>{data.title}</h1>
                   <article
                     className="md"
@@ -94,6 +114,25 @@ function DOCPages({ data_asider, data }) {
                 </div>
               </CSSTransition>
             </SwitchTransition>
+
+            <div className={styles.go_ahead}>
+              <div className={styles.pre}>
+                {pre && (
+                  <Link href={"/doc/" + data.parent + "/" + pre.slug}>
+                    <div className={styles.sup}>上一篇文章</div>
+                    <div>{"<< " + pre.title}</div>
+                  </Link>
+                )}
+              </div>
+              <div className={styles.next}>
+                {next && (
+                  <Link href={"/doc/" + data.parent + "/" + next.slug}>
+                    <div className={styles.sup}>下一篇文章</div>
+                    <div>{next.title + " >>"}</div>
+                  </Link>
+                )}
+              </div>
+            </div>
           </section>
         </div>
       </Layout>
