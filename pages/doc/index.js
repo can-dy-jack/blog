@@ -4,71 +4,49 @@ import { get_docs_info, get_doc_data } from "../../lib/getDoc";
 import styles from "../../styles/docs.module.css";
 import Link from "next/link";
 
-function DocIndex({ data_asider, data }) {
+function DocIndex({ posts, data }) {
+  const list = [];
+  for(const i of posts.data) {
+    if(i.slug === '/') continue;
+    if(i.type === 'file') {
+      list.push({
+        slug: i.slug,
+        title: i.title,
+        root: ""
+      })
+    } else {
+      for(const j of i.files) {
+        list.push({
+          slug: j.slug,
+          title: j.title,
+          root: i.dir
+        })
+      }
+    }
+  }
+
   return (
     <Layout className="main">
       <SEO title="文章"></SEO>
       <div className={styles.article_box}>
-        <aside className={styles.aside}>
-          {data_asider.data.map((item) => {
-            if (item.type == "file") {
-              return (
-                <Link
-                  href={"/doc/" + (item.slug === "/" ? "" : item.slug)}
-                  key={item.title}
-                  className={[
-                    styles.aside_file,
-                    item.slug === "/" ? styles.active : " ",
-                  ].join(" ")}
-                >
-                  {item.title}
-                </Link>
-              );
-            } else {
-              return (
-                <div key={item.dir} className={styles.aside_dir}>
-                  <div className={styles.aside_dir_head}>
-                    <span>{item.dir}</span>
-                    <svg
-                      width="20px"
-                      height="20px"
-                      strokeWidth="1.5"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      color="#000000"
-                    >
-                      <path
-                        d="M9 6l6 6-6 6"
-                        stroke="#000000"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      ></path>
-                    </svg>
-                  </div>
-                  {item.files.map((f) => (
-                    <Link
-                      href={"/doc/" + item.dir + "/" + f.slug}
-                      key={f.slug}
-                      className={styles.aside_file}
-                    >
-                      {f.title}
-                    </Link>
-                  ))}
-                </div>
-              );
-            }
-          })}
-        </aside>
         <section className={styles.article}>
-                <h1 className={styles.docs_title}>{data.title}</h1>
-                <article
-                  className="md"
-                  dangerouslySetInnerHTML={{
-                    __html: data.contentHtml,
-                  }}
-                ></article>
+          <h1 className={styles.docs_title}>{data.title}</h1>
+          <article
+            className="md"
+            dangerouslySetInnerHTML={{
+              __html: data.contentHtml,
+            }}
+          ></article>
+          <div className={styles.index_posts_list}>
+            {
+              list.map(item => (
+                <Link className={styles.index_posts_item} key={item.slug} href={'/doc/' + (item.root ? item.root + '/' : '') + item.slug}>
+                  {item.title}
+                  { item.root !== "" && <sup>{item.root}</sup>}
+                </Link>
+              ))
+            }
+          </div>
         </section>
       </div>
     </Layout>
@@ -76,11 +54,11 @@ function DocIndex({ data_asider, data }) {
 }
 
 export async function getStaticProps() {
-  const data_asider = await get_docs_info();
+  const posts = await get_docs_info();
   const data = await get_doc_data(["/"]);
   return {
     props: {
-      data_asider,
+      posts,
       data,
     },
   };
