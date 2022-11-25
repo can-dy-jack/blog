@@ -1,6 +1,7 @@
 ---
 title: Promise A+ 规范（译）
 slug: promis-a-plus
+position: 3
 ---
 
 `Promise` 代表异步操作的最终结果。与 `Promise` 交互的主要方式是通过其 `then` 方法，该方法注册回调以接收 `Promise` 的最终值或 `Promise` 失败的原因。

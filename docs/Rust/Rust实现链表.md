@@ -1,10 +1,7 @@
 ---
 title: Rust数据结构之链表
 slug: rust-linkedlist
-tag: 
-- Rust
-- 链表
-cate: Rust
+position: 2
 ---
 
 ```rust

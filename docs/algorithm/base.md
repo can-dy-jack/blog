@@ -1,6 +1,7 @@
 ---
 title: "基本算法 - 数学"
 slug: base
+position: 1
 ---
 
 ## 最大公约数、最小公倍数

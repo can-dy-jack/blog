@@ -1,6 +1,7 @@
 ---
 title: Rust实现斐波那契数列
 slug: rust-fibonacci
+position: 1
 ---
 
 代码实现：
