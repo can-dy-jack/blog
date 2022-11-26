@@ -42,6 +42,7 @@ function DOCPages({ data_asider, data }) {
         dir.childNodes[1].style.height = "0px";
       } else {
         dir.childNodes[1].style.height = heights[i] + "px";
+        dir.childNodes[0].childNodes[1].style.transform = "rotate(90deg)";
       }
     });
     console.log(heights);
@@ -50,8 +51,10 @@ function DOCPages({ data_asider, data }) {
         const files = dir.childNodes[1];
         if (files.style.height === "0px") {
           files.style.height = heights[i] + "px";
+          dir.childNodes[0].childNodes[1].style.transform = "rotate(90deg)";
         } else {
           files.style.height = "0px";
+          dir.childNodes[0].childNodes[1].style.transform = "rotate(0)";
         }
       });
     });

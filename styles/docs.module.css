@@ -44,6 +44,7 @@
 }
 .aside_dir_head svg {
   transform: rotate(0);
+  transition: all 300ms ease;
 }
 .aside_dir .aside_file {
   margin-left: 10px;
