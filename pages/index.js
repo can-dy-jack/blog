@@ -5,8 +5,6 @@ import config from "../config.js";
 import styles from "../styles/Home.module.css";
 import Index from "../file/index.mdx";
 import Image from "next/image";
-import ReactLiveMdx from "../component/func/live";
-import Like from "../component/func/temp";
 
 export default function Home() {
   return (
@@ -71,7 +69,6 @@ export default function Home() {
           <article className="md">
             <Index />
           </article>
-          <ReactLiveMdx code={`<Like />`} scope={{Like}} />
         </section>
       </Layout>
     </>

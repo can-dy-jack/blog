@@ -10,6 +10,8 @@
     "export": "next export"
   },
   "dependencies": {
+    "@codesandbox/sandpack-react": "^1.17.0",
+    "@codesandbox/sandpack-themes": "^1.17.0",
     "@mdx-js/loader": "^2.1.5",
     "@mdx-js/react": "^2.1.5",
     "@next/mdx": "^13.0.3",

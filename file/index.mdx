@@ -1,3 +1,15 @@
+import ReactLive from "../component/live/index.js"
+
+<ReactLive code={`export default function App() {
+    return(
+        <>
+            <h1>欢迎访问我的个人博客！</h1>
+            <p>你可以在这里编辑<code>react</code>代码，这可以立马在右侧运行显示</p>
+        </>
+    )
+}
+`} />
+
 ## 主页~~~
 > 本博客使用 Next.js 开发
 
@@ -12,7 +24,7 @@
 
 ![svg](/blog/img/svg404/5.svg)
 
-
+> 如果你想要在自己的电脑上运行我的博客项目，请先执行 `npm install` 命令下载依赖，然后运行 `npm run dev` 。
 ```bash
 # install dependencies
 npm install
@@ -26,4 +38,3 @@ npm run build && npm run start
 # or export static edition
 npm run export
 ```
-
