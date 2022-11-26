@@ -5,9 +5,11 @@ import { get_doc_paths, get_docs_info, get_doc_data } from "../../lib/getDoc";
 import styles from "../../styles/docs.module.css";
 import Link from "next/link";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
+import { useEffect, useRef } from "react";
 
 function DOCPages({ data_asider, data }) {
   const router = useRouter();
+  const aside = useRef();
   let pre = null,
     next = null;
   for (const asider of data_asider.data) {
@@ -29,13 +31,39 @@ function DOCPages({ data_asider, data }) {
     }
   }
 
+  useEffect(() => {
+    const dirs = document.querySelectorAll(".dirs");
+    const heights = Array(dirs.length).fill(0);
+    dirs.forEach((dir, i) => {
+      heights[i] = dir.childNodes[1].clientHeight;
+      if (
+        router.query.slug[0] !== dir.childNodes[0].childNodes[0].textContent
+      ) {
+        dir.childNodes[1].style.height = "0px";
+      } else {
+        dir.childNodes[1].style.height = heights[i] + "px";
+      }
+    });
+    console.log(heights);
+    dirs.forEach((dir, i) => {
+      dir.childNodes[0].addEventListener("click", () => {
+        const files = dir.childNodes[1];
+        if (files.style.height === "0px") {
+          files.style.height = heights[i] + "px";
+        } else {
+          files.style.height = "0px";
+        }
+      });
+    });
+  }, [aside]);
+
   return (
     <>
       <Layout>
         <SEO title={data.title} />
 
         <div className={styles.article_box}>
-          <aside className={styles.aside}>
+          <aside className={styles.aside} ref={aside}>
             {data_asider.data.map((item) => {
               if (item.type == "file") {
                 return (
@@ -54,7 +82,10 @@ function DOCPages({ data_asider, data }) {
                 );
               } else {
                 return (
-                  <div key={item.dir} className={styles.aside_dir}>
+                  <div
+                    key={item.dir}
+                    className={[styles.aside_dir, "dirs"].join(" ")}
+                  >
                     <div className={styles.aside_dir_head}>
                       <span>{item.dir}</span>
                       <svg
@@ -75,21 +106,23 @@ function DOCPages({ data_asider, data }) {
                         ></path>
                       </svg>
                     </div>
-                    {item.files.map((f) => (
-                      <Link
-                        href={"/doc/" + item.dir + "/" + f.slug}
-                        key={f.slug}
-                        className={[
-                          styles.aside_file,
-                          router.query.slug.join(",") ===
-                          item.dir + "," + f.slug
-                            ? styles.active
-                            : "",
-                        ].join(" ")}
-                      >
-                        {f.title}
-                      </Link>
-                    ))}
+                    <div className={styles.files}>
+                      {item.files.map((f) => (
+                        <Link
+                          href={"/doc/" + item.dir + "/" + f.slug}
+                          key={f.slug}
+                          className={[
+                            styles.aside_file,
+                            router.query.slug.join(",") ===
+                            item.dir + "," + f.slug
+                              ? styles.active
+                              : "",
+                          ].join(" ")}
+                        >
+                          {f.title}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 );
               }
@@ -111,28 +144,27 @@ function DOCPages({ data_asider, data }) {
                       __html: data.contentHtml,
                     }}
                   ></article>
+                  <div className={styles.go_ahead}>
+                    <div className={styles.pre}>
+                      {pre && (
+                        <Link href={"/doc/" + data.parent + "/" + pre.slug}>
+                          <div className={styles.sup}>上一篇文章</div>
+                          <div>{"<< " + pre.title}</div>
+                        </Link>
+                      )}
+                    </div>
+                    <div className={styles.next}>
+                      {next && (
+                        <Link href={"/doc/" + data.parent + "/" + next.slug}>
+                          <div className={styles.sup}>下一篇文章</div>
+                          <div>{next.title + " >>"}</div>
+                        </Link>
+                      )}
+                    </div>
+                  </div>
                 </div>
               </CSSTransition>
             </SwitchTransition>
-
-            <div className={styles.go_ahead}>
-              <div className={styles.pre}>
-                {pre && (
-                  <Link href={"/doc/" + data.parent + "/" + pre.slug}>
-                    <div className={styles.sup}>上一篇文章</div>
-                    <div>{"<< " + pre.title}</div>
-                  </Link>
-                )}
-              </div>
-              <div className={styles.next}>
-                {next && (
-                  <Link href={"/doc/" + data.parent + "/" + next.slug}>
-                    <div className={styles.sup}>下一篇文章</div>
-                    <div>{next.title + " >>"}</div>
-                  </Link>
-                )}
-              </div>
-            </div>
           </section>
         </div>
       </Layout>
