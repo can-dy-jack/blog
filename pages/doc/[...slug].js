@@ -19,7 +19,7 @@ function DOCPages({ data_asider, data }) {
       const len = asider.files.length;
       for (let i = 0; i < len; i++) {
         const f = asider.files[i];
-        if (f.slug === data.slug) {
+        if (f.slug === data.slug && data.parent === asider.dir) {
           if (i > 0) {
             pre = asider.files[i - 1];
           }
@@ -45,7 +45,6 @@ function DOCPages({ data_asider, data }) {
         dir.childNodes[0].childNodes[1].style.transform = "rotate(90deg)";
       }
     });
-    console.log(heights);
     dirs.forEach((dir, i) => {
       dir.childNodes[0].addEventListener("click", () => {
         const files = dir.childNodes[1];
