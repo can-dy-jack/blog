@@ -12,7 +12,6 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: var(--head-bg);
     backdrop-filter: blur(10px);
     z-index: 100;
 }

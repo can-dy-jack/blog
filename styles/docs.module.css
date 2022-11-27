@@ -6,7 +6,7 @@
   width: 300px;
   box-sizing: border-box;
   border-right: 1px solid var(--border);
-  background-color: var(--bg);
+  background-color: var(--asider-bg);
   position: sticky;
   top: 50px;
   left: 0;
