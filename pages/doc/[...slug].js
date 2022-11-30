@@ -10,6 +10,19 @@ import { useEffect, useRef } from "react";
 function DOCPages({ data_asider, data }) {
   const router = useRouter();
   const aside = useRef();
+  const show_aside = useRef();
+
+  useEffect(() => {
+    show_aside.current.onclick = () => {
+      if(aside.current.style.transform === "translateX(0px)") {
+        aside.current.style.transform = "translateX(-100%)";
+      } else {
+        aside.current.style.transform = "translateX(0px)";
+      }
+      console.log(aside.current.style.transform)
+    }
+  }, [])
+
   let pre = null,
     next = null;
   for (const asider of data_asider.data) {
@@ -65,6 +78,12 @@ function DOCPages({ data_asider, data }) {
         <SEO title={data.title} />
 
         <div className={styles.article_box}>
+          <div className={styles.aside_show} ref={show_aside}>
+            <svg width="24px" height="24px" strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="var(--font)">
+              <path d="M12 14a2 2 0 100-4 2 2 0 000 4z" stroke="var(--font)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
+              <path d="M21 12c-1.889 2.991-5.282 6-9 6s-7.111-3.009-9-6c2.299-2.842 4.992-6 9-6s6.701 3.158 9 6z" stroke="var(--font)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
+            </svg>
+          </div>
           <aside className={styles.aside} ref={aside}>
             {data_asider.data.map((item) => {
               if (item.type == "file") {

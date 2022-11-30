@@ -82,3 +82,25 @@ function random(m, n) {
   return Math.round(Math.random() * (n-m) + m);
 }
 ```
+
+## 斐波那契数列 - 生成器版本
+```js
+function* createFibonacci() {
+  let a = 1, b = 1;
+  while(1) {
+    yield a;
+    b = a+b;
+    a = b-a;
+  }
+}
+
+let fibonacci = createFibonacci();
+fibonacci.next() // { value: 1, done: false }
+fibonacci.next() // { value: 1, done: false }
+fibonacci.next() // { value: 2, done: false }
+fibonacci.next() // { value: 3, done: false }
+fibonacci.next() // { value: 5, done: false }
+fibonacci.next() // { value: 8, done: false }
+fibonacci.next() // { value: 13, done: false }
+```
+

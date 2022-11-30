@@ -1,0 +1,38 @@
+/* #region media */
+/* mini width */
+@media screen and (max-width: 200px) {
+  :root {
+    --index_padding: 20px 10px;
+  }
+}
+/* small width */
+@media screen and (max-width: 500px) and (min-width: 201px) {
+  :root {
+    --index_padding: 20px 20px;
+  }
+}
+/* meidium width */
+@media screen and (min-width: 501px) and (max-width: 800px) {
+  :root {
+    --index_padding: 20px 30px;
+  }
+}
+/* big width */
+@media screen and (min-width: 801px) and (max-width: 1000px) {
+  :root {
+    --index_padding: 20px 10%;
+  }
+}
+/* x big width */
+@media screen and (min-width: 1001px) and (max-width: 1200px) {
+  :root {
+    --index_padding: 20px 12%;
+  }
+}
+/* xx big width */
+@media screen and (min-width: 1201px) {
+  :root {
+    --index_padding: 20px 15%;
+  }
+}
+/* #endregion */

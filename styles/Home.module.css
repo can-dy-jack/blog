@@ -47,7 +47,7 @@
 /* indexinfo styles */
 .indexinfo {
   /* background-color: #222; */
-  padding: 50px 30px;
+  padding: 20px 10px;
   width: 100%;
   box-sizing: border-box;
   display: flex;
@@ -67,13 +67,8 @@
   font-size: 1.5rem;
   font-weight: 600;
 }
-/* indexinfo styles end */
-/* mdx styles */
 .mdx {
   width: 100%;
   box-sizing: border-box;
-  /* FIXME */
-  padding: 30px 20%;
+  padding: var(--index_padding);
 }
-
-/* mdx styles end */

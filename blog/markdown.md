@@ -139,10 +139,10 @@ __double underscores__
 ## markdown 图片
 
 ```md
-![插画来自https://error404.fun/](/img/svg404/10.svg)
+![插画来自https://error404.fun/](/blog/svg/browser_icon_4.svg)
 ```
 
-![插画来自https://error404.fun/](/blog/img/svg404/10.svg)
+![插画来自https://error404.fun/](/blog/svg/browser_icon_4.svg)
 
 ## emoji
 
