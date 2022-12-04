@@ -35,7 +35,8 @@ html {
   --bg: #fff;
   --asider-bg: #fff;
   --index-head-bg: var(--main);
-  --border: #eee;
+  --table-bg: rgb(246, 248, 250);
+  --table-border: rgb(208, 215, 222);
   --index-bg: radial-gradient(circle at top right, #666, #235678),
     radial-gradient(circle at top left, #666, var(--index-head-bg));
   /* #region */
@@ -51,14 +52,15 @@ html {
 .dark {
   color: var(--font);
   background: var(--bg);
-  --pre-bg: #0d1117;
+  --pre-bg: #161b22;
   --font: #dfdfdf;
   --head-bg: rgba(54, 54, 54, 0.1);
   --foot-bg: #1c1e21;
-  --bg: #1a1a1a;
-  --asider-bg: #333;
+  --bg: #0d1117;
+  --asider-bg: #323232;
   --index-head-bg: var(--main-dark);
-  --border: #555;
+  --table-bg: rgb(22, 27, 34);
+  --table-border: rgb(48, 54, 61);
   --index-bg: radial-gradient(circle at top right, #222, #133d58),
     radial-gradient(circle at top left, #222, var(--index-head-bg));
   /* #region */
@@ -133,22 +135,16 @@ ol li {
   line-height: 1.8;
 }
 table {
-  border: 1px solid var(--border);
-  padding: 1px;
-  border-radius: 5px;
+  border: 1px solid var(--table-border);
   width: 100%;
+  border-collapse: collapse;
 }
-table thead {
-  background-color: var(--border);
-}
-table thead tr th {
-  padding: 5px 10px;
+table tr th, table tr td {
+  border: 1px solid var(--table-border);
+  padding: 10px 15px;
 }
 table tbody tr:nth-child(2n) {
-  background-color: var(--foot-bg);
-}
-table tbody tr td {
-  padding: 5px 10px;
+  background-color: var(--table-bg);
 }
 
 .md * {
