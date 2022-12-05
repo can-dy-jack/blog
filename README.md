@@ -1,17 +1,11 @@
 ## blog
 
-### done
+### doning
+- 抽象代码组件
+- 适配移动端
 
-- [x] 修复 functions 组件的 cookie_change_mode 的 bug
-- [x] 主页 适配移动端
-- [x] head 适配移动端
-- [x] 文章 适配移动端
+### 计划
 
-### 进行中
-
-- [ ] [Sandpack](https://sandpack.codesandbox.io/docs/getting-started/custom-ui) 更多功能、样式
-  - [joshwcomeau/next-level-playground](https://www.joshwcomeau.com/react/next-level-playground/)
-- [ ] 适配移动端
 - [ ] 文章 tag 和 cate 等 front-matter 扩展
 - [ ] 主题 - redux / useContext 传递信息
 - [ ] `mdx`文件与`md`文件的统一与取舍
