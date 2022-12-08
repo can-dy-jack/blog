@@ -3,7 +3,6 @@ import Layout from "../component/layout";
 import config from "../config.js";
 import styles from "../styles/Home.module.css";
 import Index from "../file/index.mdx";
-import Image from "next/image";
 import LButton from "../component/_partial/LinkButton";
 import FlexBox from "../component/_partial/FlexBox";
 
