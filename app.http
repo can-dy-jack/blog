@@ -1,0 +1,7 @@
+GET http://localhost:3000/blog/api/hello
+Content-Type: application/json
+
+### 
+
+Get http://localhost:3000/blog/api/info
+Content-Type: application/json

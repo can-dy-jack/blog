@@ -6,6 +6,7 @@ import Image from "next/image";
 import s from "../../styles/blog.module.css";
 
 function BlogIndex({ allBlogsData }) {
+
   return (
     <Layout>
       <SEO title="博客列表" keywords={["博客列表", "blogs"]}></SEO>
