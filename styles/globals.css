@@ -178,3 +178,12 @@ table tbody tr:nth-child(2n) {
 }
 /* #endregion */
 
+
+#poem {
+  border-left-color: #1ba4ce;
+  border-radius: 0;
+  background: linear-gradient(to right, #1ba4ce30,  var(--bg));
+  border-left-width: 10px;
+  font-size: 1.2rem;
+  transition: all 1s ease;
+}

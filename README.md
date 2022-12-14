@@ -1,7 +1,6 @@
 ## blog
 
 ### doning
-- 抽象代码组件
 - 适配移动端
 
 ### 计划
@@ -10,10 +9,8 @@
 - [ ] 主题 - redux / useContext 传递信息
 - [ ] `mdx`文件与`md`文件的统一与取舍
   - `mdx`支持`Code Playground`
-- [ ] 整理图片资源和文章
 - [ ] 代码某一（几）行高亮显示
 <!-- - [ ] 添加一些花里胡哨的东西 -->
-- API 调用，丰富网站内容 [一言](https://developer.hitokoto.cn/)
 
 ## markdown 规范
 

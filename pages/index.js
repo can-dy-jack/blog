@@ -5,8 +5,20 @@ import styles from "../styles/Home.module.css";
 import Index from "../file/index.mdx";
 import LButton from "../component/_partial/LinkButton";
 import FlexBox from "../component/_partial/FlexBox";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [poem, setRandomPoem] = useState("");
+
+  useEffect(() => {
+    fetch("https://v1.hitokoto.cn/?c=k")
+    .then(t => t.json())
+    .then(
+      data => setRandomPoem(data)
+    )
+    .catch(console.warn)
+  }, [])
+
   return (
     <>
       <SEO title="主页" keywords={["主页", "blog"]}></SEO>
@@ -19,6 +31,17 @@ export default function Home() {
             <LButton to="/doc" text="我的文章📚" />
           </div>
         </section>
+
+        <div className={styles.mdx}>
+          <blockquote id="poem">
+            <p>{ poem.hitokoto }</p>
+            <p style={{
+              textAlign: "right"
+            }}>
+              { poem.from_who ? " --" + poem.from_who : "" }
+            </p>
+          </blockquote>
+        </div>
 
         <section className={styles.indexinfo}>
           <FlexBox

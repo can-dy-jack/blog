@@ -3,7 +3,9 @@ import { sandpackDark } from "@codesandbox/sandpack-themes";
 
 function ReactLive({ code }) {
   return (
-    <div>
+    <div style={{
+      margin: "20px 0"
+    }}>
       <Sandpack
         template="react"
         theme={sandpackDark}
