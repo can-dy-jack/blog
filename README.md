@@ -1,15 +1,16 @@
 ## blog
+> 基于Next.js制作的博客项目
 
 ### doning
 - 适配移动端
 
-### 计划
+<!-- ### 计划 -->
 
-- [ ] 文章 tag 和 cate 等 front-matter 扩展
-- [ ] 主题 - redux / useContext 传递信息
-- [ ] `mdx`文件与`md`文件的统一与取舍
-  - `mdx`支持`Code Playground`
-- [ ] 代码某一（几）行高亮显示
+<!-- 文章 tag 和 cate 等 front-matter 扩展 -->
+<!-- 主题 - redux / useContext 传递信息 -->
+<!-- `mdx`文件与`md`文件的统一与取舍 -->
+  <!-- `mdx`支持`Code Playground` -->
+<!-- 代码某一（几）行高亮显示 -->
 <!-- - [ ] 添加一些花里胡哨的东西 -->
 
 ## markdown 规范
