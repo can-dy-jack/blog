@@ -8,9 +8,9 @@ function LButton({ to, text }) {
     </button>
   );
 }
-LButton.PropTypes = {
-  to: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
+LButton.propTypes = {
+  to: PropTypes.string,
+  text: PropTypes.string,
 };
 
 export default LButton;

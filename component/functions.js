@@ -7,6 +7,24 @@ function Functions({ cio }) {
   const toTop = useRef();
   const dark = useRef();
 
+  // 代码抽象
+  const ToDark = () => {
+    document.body.classList.add("dark");
+    dark.current.style.display = "none";
+
+    const html = document.documentElement;
+    html.style.setProperty("color-scheme", "dark");
+    html.style.backgroundColor = "#0d1117";
+  };
+  const ToLight = () => {
+    document.body.classList.remove("dark");
+    dark.current.style.display = "inline";
+
+    const html = document.documentElement;
+    html.style.setProperty("color-scheme", "light");
+    html.style.backgroundColor = "#ffffff";
+  };
+
   useEffect(() => {
     window.onscroll = () => {
       updateMax(
@@ -30,51 +48,33 @@ function Functions({ cio }) {
     };
   }, [max]);
 
-  function change_mode(e) {
-    if (document.body.classList.contains("dark")) {
-      document.body.classList.remove("dark");
-      dark.current.style.display = "inline";
-      document.querySelector("html").style.setProperty("color-scheme", "light");
-    } else {
-      document.body.classList.add("dark");
-      dark.current.style.display = "none";
-      document.querySelector("html").style.setProperty("color-scheme", "dark");
-    }
+  function change_mode() {
+    if (document.body.classList.contains("dark")) ToLight();
+    else ToDark();
   }
-  useEffect(() => {
-    if (document.cookie.includes("dark:open")) {
-      document.body.classList.add("dark");
-      dark.current.style.display = "none";
 
-      document.querySelector("html").style.setProperty("color-scheme", "dark");
-    } else if (document.cookie.includes("dark:close")) {
-      document.body.classList.remove("dark");
-      dark.current.style.display = "inline";
+  // 启动时检测是否开启cookie
+  // useEffect(() => {
+  //   if (document.cookie.includes("dark:open")) {
+  //     ToDark();
+  //   } else if (document.cookie.includes("dark:close")) {
+  //     ToLight();
+  //   }
+  // }, []);
 
-      document.querySelector("html").style.setProperty("color-scheme", "light");
-    }
-  }, []);
   function cookie_change_mode(e) {
-    if (!document.cookie.includes("dark")) {
-      document.cookie = "dark:open";
+    // OK之后并没有写入cookie，在这里判断一下写入
+    if (!document.cookie.match(/mode/g)) {
+      if(document.body.classList.contains("dark")) document.cookie = "mode=dark";
+      else document.cookie = "mode=light";
     }
 
-    // console.log(document.cookie);
-
-    if (document.cookie.includes("dark:open")) {
-      document.body.classList.remove("dark");
-      dark.current.style.display = "inline";
-      document.querySelector("html").style.setProperty("color-scheme", "light");
-
-      const cookie = document.cookie.split(";");
-      let pos = cookie.indexOf("dark:open");
-      cookie.splice(pos, 1, "dark:close");
-      document.cookie = cookie.join(";");
+    if (!document.cookie.match(/mode=dark/g)) {
+      ToDark();
+      document.cookie = "mode=dark";
     } else {
-      document.body.classList.add("dark");
-      dark.current.style.display = "none";
-      document.querySelector("html").style.setProperty("color-scheme", "dark");
-      document.cookie = "dark:open";
+      ToLight();
+      document.cookie = "mode=light";
     }
   }
 
