@@ -3,7 +3,9 @@ import Layout from "../component/layout";
 import config from "../config.js";
 import styles from "../styles/Home.module.css";
 import Index from "../file/index.mdx";
-import LButton from "../component/_partial/LinkButton";
+import Rbtn from "../stories/Rbtn";
+import TipText from "../stories/TipText";
+import Link from "next/link";
 import FlexBox from "../component/_partial/FlexBox";
 import { useEffect, useState } from "react";
 
@@ -27,20 +29,22 @@ export default function Home() {
           <h2 className={styles.title}>{config.title}</h2>
           <h3 className={styles.subtitle}>{config.description}</h3>
           <div className={styles.btn}>
-            <LButton to="/blog" text="我的博客 ->" />
-            <LButton to="/doc" text="我的文章📚" />
+            <Rbtn>
+              <Link href="/blog">我的博客 {"->"}</Link>
+            </Rbtn>
+            <Rbtn>
+              <Link href="/doc">我的文章📚</Link>
+            </Rbtn>
           </div>
         </section>
 
         <div className={styles.mdx}>
-          <blockquote id="poem">
-            <p>{ poem.hitokoto }</p>
-            <p style={{
-              textAlign: "right"
-            }}>
-              { poem.from_who ? " --" + poem.from_who : "" }
-            </p>
-          </blockquote>
+            <p><TipText
+            text={ poem.from_who ? poem.from_who : "佚名" }
+            color="#86d72f"
+            bg="#86d72f21">
+              { poem.hitokoto }
+            </TipText></p>
         </div>
 
         <section className={styles.indexinfo}>

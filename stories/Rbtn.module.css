@@ -1,0 +1,51 @@
+.rbtn {
+    outline: none;
+    border-radius: 4px;
+    border: 1px solid rgba(27, 31, 38, 0.16);
+    font-family: inherit;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    appearance: none;
+    user-select: none;
+    text-decoration: none;
+    text-align: center;
+    padding: 5px 12px;
+    font-size: 14px;
+    color: rgba(36, 41, 48);
+    background-color: rgb(246, 248, 250);
+    box-shadow: 0 1px 0 rgba(103, 116, 131, 0.1), inset 0 1px 0 rgba(255,255,255, .25);
+    margin: 4px;
+    transition: all 240ms ease;
+}
+.rbtn:hover {
+    background-color: rgb(243, 244, 246);
+}
+.rbtn:active {
+    background-color: rgb(225, 226, 230);
+}
+.rbtn:disabled {
+    background-color: rgb(235, 234, 236);
+    cursor: default;
+    box-shadow: none;
+}
+.rbtn.disabled:active, .rbtn.disabled:hover {
+    background-color: rgb(235, 234, 236);
+}
+
+.dark_rbtn {
+    border: 1px solid #222;
+    box-shadow: 0 1px 0 rgba(20, 20, 20, 0.1),
+        inset 0 1px 0 rgba(0, 0, 0, .25);
+    background-color: #424242;
+    color: #fff;
+}
+.dark_rbtn:hover {
+    background-color: #333;
+}
+.dark_rbtn:active {
+    background-color: #222;
+}
+.dark_rbtn:disabled, .dark_rbtn.disabled:active, .dark_rbtn.disabled:hover {
+    background-color: #252525;
+}

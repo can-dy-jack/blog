@@ -30,7 +30,9 @@ function DocIndex({ posts, data }) {
       <SEO title="文章"></SEO>
       <div className={styles.article_box}>
         <section className={styles.article}>
-          <h1 className={styles.docs_title}>{data.title}</h1>
+          <h1 className={styles.docs_title}>
+            {data.title}
+          </h1>
           <article
             className="md"
             dangerouslySetInnerHTML={{
