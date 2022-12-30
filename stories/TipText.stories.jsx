@@ -12,11 +12,32 @@ export default {
 
 const Template = (args) => (
     <TipText text={args.text} color={args.color} bg={args.bg}>
-      You can also define args at the global level; they will apply to every component's stories unless you overwrite them. 
+      TipText
     </TipText>
 );
 
-export const normal = Template.bind({})
-normal.args = {
+export const info = Template.bind({})
+info.args = {
     text: "info"
+}
+
+export const success = Template.bind({})
+success.args = {
+    text: "success",
+    bg: "#1212ef24",
+    color: "#1212ef"
+}
+
+export const warning = Template.bind({})
+warning.args = {
+    text: "warning",
+    bg: "#ffcc4024",
+    color: "#ffcc40"
+}
+
+export const danger = Template.bind({})
+danger.args = {
+    text: "danger",
+    bg: "#ef121224",
+    color: "#ef1212"
 }
