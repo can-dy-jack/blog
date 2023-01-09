@@ -86,32 +86,14 @@
   );
   border-radius: 5px;
 }
-.article h2:hover::after {
-  opacity: 0.6;
+.article h2 {
+  font-size: 1.6rem;
 }
-.article h2::after {
-  content: " h2 ";
-  color: var(--main);
-  opacity: 0;
-  transition: opacity 300ms ease;
+.article h3 {
+  font-size: 1.4rem;
 }
-.article h3:hover::after {
-  opacity: 0.6;
-}
-.article h3::after {
-  content: " h3 ";
-  color: var(--main);
-  opacity: 0;
-  transition: opacity 300ms ease;
-}
-.article h4:hover::after {
-  opacity: 0.6;
-}
-.article h4::after {
-  content: " h4 ";
-  color: var(--main);
-  opacity: 0;
-  transition: opacity 300ms ease;
+.article h4 {
+  font-size: 1.2rem;
 }
 .index_posts_list {
   display: flex;

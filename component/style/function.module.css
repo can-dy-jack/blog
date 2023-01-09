@@ -5,7 +5,7 @@
 }
 .function_btns {
     background-color: var(--bg);
-    border: 2px solid #444;
+    border: 2px solid var(--newYear);
     height: 40px;
     width: 40px;
     border-radius: 50%;

@@ -22,9 +22,6 @@
 .links a, .links .linksHead {
     line-height: 2;
 }
-.links a:hover {
-    text-decoration: underline dashed;
-}
 .links .linksHead {
     font-size: 1.2rem;
     font-weight: 500;

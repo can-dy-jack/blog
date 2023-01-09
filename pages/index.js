@@ -41,8 +41,8 @@ export default function Home() {
         <div className={styles.mdx}>
             <p><TipText
             text={ poem.from_who ? poem.from_who : "佚名" }
-            color="#86d72f"
-            bg="#86d72f21">
+            color="#ff2121"
+            bg="#ff212121">
               { poem.hitokoto }
             </TipText></p>
         </div>

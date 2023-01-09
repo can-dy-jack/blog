@@ -16,25 +16,27 @@ html {
 
 :root {
   /* 橘红 */
-  --main: #ff7500;
-  --main-blur1: rgba(255, 117, 0, 0.1);
-  --main-blur2: rgba(255, 117, 0, 0.2);
-  --main-blur5: rgba(255, 117, 0, 0.5);
-  --main-blur6: rgba(255, 117, 0, 0.6);
-  --main-blur7: rgba(255, 117, 0, 0.7);
+  --main: #ff2121;
+  --main-blur1: rgba(255, 33, 33, .1);
+  --main-blur2: rgba(255, 33, 33, 0.2);
+  --main-blur5: rgba(255, 33, 33, 0.5);
+  --main-blur6: rgba(255, 33, 33, 0.6);
+  --main-blur7: rgba(255, 33, 33, 0.7);
   /* 琥珀 */
-  --main-dark: #ca6924;
+  --main-dark: #c83c23;
   /* 油绿 */
   --green1: #00bc12;
   /* 青碧 */
   --select: #48c0a3;
+  /* 大红 */
+  --newYear: #ff2121;
 
   --pre-bg: #f6f8fa;
   --font: #232323;
   --head-bg: rgba(255, 255, 255, 0.1);
-  --foot-bg: #faf8fe;
-  --bg: #fff;
-  --asider-bg: #fff;
+  --foot-bg: #fae8ee;
+  --bg: #ffeeee;
+  --asider-bg: #fae8ee;
   --index-head-bg: var(--main);
   --table-bg: rgb(246, 248, 250);
   --table-border: rgb(208, 215, 222);
@@ -57,8 +59,8 @@ html {
   --pre-bg: #161b22;
   --font: #dfdfdf;
   --head-bg: rgba(54, 54, 54, 0.1);
-  --foot-bg: #1c1e21;
-  --bg: #0d1117;
+  --foot-bg: #3c1e21;
+  --bg: #170d0d;
   --asider-bg: #323232;
   --index-head-bg: var(--main-dark);
   --table-bg: rgb(22, 27, 34);
@@ -89,6 +91,7 @@ a {
 }
 a:hover {
   color: var(--main-dark);
+  border-bottom: 1px solid var(--main-dark);
 }
 img {
   max-width: 100%;
@@ -190,4 +193,8 @@ table tbody tr:nth-child(2n) {
   border-left-width: 10px;
   font-size: 1.2rem;
   transition: all 1s ease;
+}
+.sr-only::after {
+  content: "\1F517";
+  margin-left: 10px;
 }
