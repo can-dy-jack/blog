@@ -70,7 +70,7 @@ function DOCPages({ data_asider, data }) {
         }
       });
     });
-  }, [aside]);
+  }, [aside, router.query.slug]);
 
   return (
     <>

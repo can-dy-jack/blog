@@ -19,6 +19,7 @@ export default function Home() {
       data => setRandomPoem(data)
     )
     .catch(console.warn)
+    .finally(() => console.log("poem loaded"));
   }, [])
 
   return (
