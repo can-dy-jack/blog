@@ -19,6 +19,7 @@
   font-size: 3rem;
   font-weight: 600;
   margin: 20px;
+  border: none;
 }
 .subtitle {
   font-size: 1.4rem;
@@ -37,12 +38,6 @@
   border: none;
   transition: all 0.3s ease-out;
   margin: 5px;
-}
-.btn button:hover {
-  background-color: #d4d5d8;
-}
-.btn button a {
-  color: #232323;
 }
 /* indexinfo styles */
 .indexinfo {
