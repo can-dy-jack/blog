@@ -1,0 +1,20 @@
+<!-- https://github.com/DenverCoder1/readme-typing-svg/ -->
+<svg xmlns='http://www.w3.org/2000/svg'
+    xmlns:xlink='http://www.w3.org/1999/xlink'
+    viewBox='0 0 500 50'
+    style='background-color: #56FF6B00;'
+    width='500px' height='50px'>
+    <path id='path0'>
+    <!-- Single line -->
+        <animate id='d0' attributeName='d' begin='0s;d0.end'
+            dur='6999ms' fill='remove'
+            values='m0,25 h0 ; m0,25 h500 ; m0,25 h500 ; m0,25 h0' keyTimes='0;0.57151021574511;0.85712244606372;1' />
+    </path>
+    <text font-family='"Noto Sans Simplified Chinese", monospace' fill='#222222' font-size='30'
+        dominant-baseline='middle'
+        x='50%' text-anchor='middle'>
+        <textPath xlink:href='#path0'>
+            长风破浪会有时，直挂云帆济沧海。
+        </textPath>
+    </text>
+</svg>

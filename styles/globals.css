@@ -125,14 +125,12 @@ pre.prism-code {
 /* markdwon styles */
 blockquote {
   margin: 0;
-  background-color: var(--main-blur2);
-  padding: 6px 10px;
-  border-left: 5px solid var(--main);
-  border-radius: 5px;
+  padding: 3px 10px;
+  border-left: 5px solid gray;
+  color: gray;
 }
 blockquote p {
-  margin: 10px;
-  padding: 5px;
+  margin: 5px;
 }
 p {
   line-height: 1.8;
@@ -156,6 +154,13 @@ table tbody tr:nth-child(2n) {
 
 .md * {
   scroll-margin-top: 60px;
+}
+main h1, main h2 {
+  line-height: 2;
+  border-bottom: 1px solid var(--main);
+}
+main p:has(img) {
+  text-align: center;
 }
 .btn {
   outline: none;
