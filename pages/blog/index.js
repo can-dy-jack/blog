@@ -3,7 +3,7 @@ import SEO from "../../component/SEO";
 import { getSortedBlogsData } from "../../lib/getblog";
 import Link from "next/link";
 import Image from "next/image";
-import s from "../../styles/blog.module.css";
+import s from "../../src/styles/blog.module.css";
 
 function BlogIndex({ allBlogsData }) {
 

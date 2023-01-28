@@ -1,0 +1,244 @@
+/* #region root styles */
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Fira Code, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, microsoft yahei, Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue, sans-serif;
+  font-size: 16px;
+  color: var(--font);
+  background-color: var(--bg);
+  scroll-behavior: smooth;
+}
+html {
+    color-scheme: light dark;
+}
+/* css variable */
+:root {
+    --primary: #177cb0;    /* 靛蓝 */
+    --info: #44cef6;       /* 蓝  */
+    --second: #003371;     /* 甘青 */
+    --warn: #ffb61e;       /* 藤黄 */
+    --danger: #f20c00;     /* 石榴红 */
+
+    --wei-blue: #70f3ff;   /* 蔚蓝 */
+    --blue-gray: #a1afc9;  /* 蓝灰 */
+    --dai-blue: #426666;   /* 黛蓝 */
+    --dai-purple: #574266; /* 黛紫 */
+    --purple: #8d4bbb;     /* 紫  */
+    --pink-red: #f00056;   /* 品红 */
+    --tao-red: #f47983;    /* 桃红 */
+    --zhu-red: #ff4c00;    /* 朱红 */
+    --yang-red: #ff0097;   /* 洋红 */
+    --li: #60281e;         /* 栗色 */
+    --yellow: #fff143;     /* 鹅黄 */
+    --xing-yellow: #ffa631;/* 杏黄 */
+    --cong-green: #9ed900; /* 葱绿 */
+    --oil-green: #00bc12;  /* 油绿 */
+    --rock-green: #16a951; /* 石绿 */
+    --cyan: #00e09e;       /* 青色 */
+    --zu-cyan: #789262;    /* 竹青 */
+    --ink: #50616d;        /* 墨色 */
+    --tea: #b35c44;        /* 茶色 */
+    --brown: #9b4400;      /* 棕色 */
+    --sliver: #e9e7ef;     /* 银白 */
+    --snow: #f0fcff;       /* 雪白 */
+    --moon: #d6ecf0;       /* 月白 */
+    --pink: #fff2df;       /* 粉白 */
+    --wu: #725e82;         /* 乌色 */
+    --li: #75664d;         /* 黎  */
+    --mei-black: #312520;  /* 煤黑 */
+    --black: #161823;      /* 漆黑 */
+    --xuan-cyan: #3d3b4f;  /* 玄青 */
+    --new-year: #ff2121;   /* 大红 */
+
+    /* white theme variable */
+    --font: #121212; /* 121212 */
+    --bg: #fff;
+    --select: var(--second);
+    --code: #f6f8fa;
+    --border: rgb(208, 215, 222);
+    --asider-bg: #fafbfc;
+    --aside-hover: #f1f4f7;
+    --head-bg: rgba(247, 247, 247, .5);
+    --clock-bg: #fafbfc;
+
+    /* #region icon */
+    --github: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E");
+    /* #endregion */
+}
+.dark {
+    --bg: #0d1117;
+    --font: #fff;
+    --border: #30363d;
+    --asider-bg: #161b22;
+    --aside-hover: #0d1117;
+    --code: rgb(22, 27, 34);
+    --head-bg: rgba(22, 27, 34, .5);
+    --clock-bg: #161b22;
+    /* #region */
+    --github: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23fff' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E");
+    /* #endregion */
+}
+/* #endregion */
+
+/* #region common code */
+::selection {
+    background-color: var(--zu-cyan);
+    color: #fff;
+}
+::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+}
+::-webkit-scrollbar-thumb {
+    height: 6px;
+    background-color: var(--border);
+    border: 2px solid transparent;
+    outline: none;
+    border-radius: 0;
+    background-clip: padding-box; /* 魔法 */
+}
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+a:hover {
+    color: var(--second);
+    border-bottom: 1px solid var(--second);
+}
+img {
+    max-width: 100%;
+}
+code {
+    font-size: 0.9em;
+    padding: 4px 6px;
+    background: var(--code);
+    color: var(--primary);
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    box-shadow: inset 0 -2px 0 var(--border);
+    margin: 1px;
+    font-family: Fira Code, JetBrains Mono, monospace, sans-serif;
+    /* text-shadow: 1px 0 1px var(--second); */
+    font-weight: 500;
+    line-height: 1.5;
+}
+pre, pre code {
+  font-family: Fira Code, JetBrains Mono, monospace, sans-serif;
+}
+pre code::before, pre code::after {
+  content: "";
+}
+pre {
+    background-color: var(--code);
+    position: relative;
+    border-radius: 5px;
+}
+/* #endregion */
+/* #region markdwon styles */
+.md * {
+    scroll-margin-top: 60px;
+}
+p {
+    line-height: 1.8;
+    box-sizing: border-box;
+}
+p:has(img) {
+    text-align: center;
+}
+blockquote {
+    margin: 0;
+    /* padding: 0 10px; */
+    border-left: 4px solid #ccc;
+    color: #888;
+}
+blockquote p {
+    margin: 5px;
+}
+ul li,
+ol li {
+  line-height: 1.8;
+}
+table {
+    border-collapse: collapse;
+
+    /* 解决溢出导致横向滚动条 */
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+}
+table tr {
+    width: 100%;
+    overflow: auto;
+    white-space: wrap;
+}
+table tr th, table tr td {
+    border: 1px solid var(--border);
+    padding: 10px 15px;
+}
+table tbody tr:nth-child(2n) {
+    background-color: var(--code);
+}
+h1 {
+    font-size: 2em;
+}
+h2 {
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid var(--border);
+    font-size: 1.5em;
+}
+h1, h2, h3, h4, h5, h6, p {
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* #endregion */
+.hidden {
+    transform: translateY(50px);
+    opacity: 0;
+}
+.expand {
+    transform: translateY(-40px);
+}
+#poem {
+    border-left-color: #1ba4ce;
+    border-radius: 0;
+    background: linear-gradient(to right, #1ba4ce30,  var(--bg));
+    border-left-width: 10px;
+    font-size: 1.2rem;
+    transition: all 1s ease;
+}
+.sr-only::after {
+    content: "\1F517";
+    margin-left: 10px;
+}
+/* #region media  */
+.flex-width {
+    box-sizing: border-box;
+}
+@media screen and (max-width: 600px) {
+    .flex-width {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 1000px) and (min-width: 601px){
+    .flex-width {
+        width: 80%;
+        margin: auto;
+    }
+}
+@media screen and (min-width: 1001px){
+    .flex-width {
+        width: 800px;
+        margin: auto;
+    }
+}
+/* #endregion */

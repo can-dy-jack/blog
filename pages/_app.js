@@ -1,7 +1,6 @@
-import "../styles/globals.css";
-import "../styles/highlight.css";
-import "../styles/animate.css";
-import "../styles/media.css"; // 媒体查询 - 适配移动端
+import "../src/styles/animate.css";
+import "../src/styles/global.css";
+import "../src/styles/highlight.css";
 import Functions from "../component/functions";
 import ConfirmPopup from "../component/cookie";
 import { useEffect, useState } from "react";

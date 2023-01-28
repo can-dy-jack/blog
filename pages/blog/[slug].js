@@ -6,7 +6,7 @@ import {
   getBlogsData,
   getSortedBlogsData,
 } from "../../lib/getblog";
-import styles from "../../styles/blogs.module.css";
+import styles from "../../src/styles/blogs.module.css";
 import Link from "next/link";
 
 function BlogPages({ data, allBlogs }) {

@@ -24,7 +24,7 @@ const config = {
       label: "博客",
       items: [
         {
-          label: "JavaScript 两个变量的值交换的方式及性能",
+          label: "JavaScript变量交换",
           link: "/blog/js-change-var",
         },
         {

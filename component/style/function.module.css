@@ -5,7 +5,7 @@
 }
 .function_btns {
     background-color: var(--bg);
-    border: 2px solid var(--newYear);
+    border: 2px solid var(--border);
     height: 40px;
     width: 40px;
     border-radius: 50%;
@@ -20,11 +20,8 @@
     width: 40px;
     line-height: 40px;
     text-align: center;
-    /* transform: translateY(-40px); */
     font-size: 1rem;
 }
 .function_btns .function_part svg {
     margin-top: 8px;
 }
-
-

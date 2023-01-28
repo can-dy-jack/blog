@@ -1,7 +1,7 @@
 import SEO from "../component/SEO";
 import Layout from "../component/layout";
 import config from "../config.js";
-import styles from "../styles/Home.module.css";
+import styles from "../src/styles/Home.module.css";
 import Index from "../file/index.mdx";
 import Rbtn from "../stories/Rbtn";
 import TipText from "../stories/TipText";
@@ -14,13 +14,11 @@ export default function Home() {
 
   useEffect(() => {
     fetch("https://v1.hitokoto.cn/?c=k")
-    .then(t => t.json())
-    .then(
-      data => setRandomPoem(data)
-    )
-    .catch(console.warn)
-    .finally(() => console.log("poem loaded"));
-  }, [])
+      .then((t) => t.json())
+      .then((data) => setRandomPoem(data))
+      .catch(console.warn)
+      .finally(() => console.log("poem loaded"));
+  }, []);
 
   return (
     <>
@@ -31,21 +29,29 @@ export default function Home() {
           <h3 className={styles.subtitle}>{config.description}</h3>
           <div className={styles.btn}>
             <Rbtn>
-              <Link href="/blog">我的博客 {"->"}</Link>
+              <Link href="/blog">我的博客</Link>
             </Rbtn>
             <Rbtn>
-              <Link href="/doc">我的文章📚</Link>
+              <Link href="/doc">技术文章</Link>
             </Rbtn>
           </div>
         </section>
 
-        <div className={styles.mdx}>
-            <p><TipText
-            text={ poem.from_who ? poem.from_who : "佚名" }
-            color="#ff2121"
-            bg="#ff212121">
-              { poem.hitokoto }
-            </TipText></p>
+        <div
+          style={{
+            padding: "20px",
+            textAlign: "center",
+          }}
+        >
+          <p className="flex-width">
+            <TipText
+              text={poem.from_who ? poem.from_who : "佚名"}
+              color="#ff2121"
+              bg="#ff212121"
+            >
+              {poem.hitokoto}
+            </TipText>
+          </p>
         </div>
 
         <section className={styles.indexinfo}>
@@ -76,7 +82,7 @@ export default function Home() {
         </section>
 
         <section className={styles.mdx}>
-          <article className="md">
+          <article className="md flex-width">
             <Index />
           </article>
         </section>

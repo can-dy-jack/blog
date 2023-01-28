@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Layout from "../component/layout";
 import SEO from "../component/SEO";
-import css from "../styles/clock.module.css";
+import css from "../src/styles/clock.module.css";
 import useInterval from "../component/hooks/useInterval";
 
 function Clock() {

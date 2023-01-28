@@ -3,20 +3,31 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./style/head.module.css";
 import { useEffect, useRef } from "react";
+import HeadNav from "./_partial/headNav";
+import useIsMobile from "./_partial/isMobile";
 
 function PostHead() {
-  const links = useRef();
-  const more = useRef();
+  const more = useRef(), bg = useRef(), 
+    close = useRef(), aside = useRef();
+  const isMobile = useIsMobile();
+
+  const closeAside = () => {
+    bg.current.style.opacity = "0";
+    bg.current.style.visibility = "hidden";
+    aside.current.style.transform = "translateX(100%)";
+  }
 
   useEffect(() => {
-    more.current.onclick = () => {
-      if(links.current.style.transform === "translateX(0px)") {
-        links.current.style.transform = "translateX(100%)";
-      } else {
-        links.current.style.transform = "translateX(0)";
-      }
+    if(more.current && close.current && aside.current) {
+      more.current.addEventListener("click", () => {
+        bg.current.style.opacity = "1";
+        bg.current.style.visibility = "visible";
+        aside.current.style.transform = "translateX(0px)";
+      })
+      close.current.addEventListener("click", closeAside)
+      bg.current.addEventListener("click", closeAside)
     }
-  }, [])
+  })
 
   return (
     <header className={styles.header}>
@@ -28,34 +39,44 @@ function PostHead() {
               alt="logo"
               height={40}
               width={40}
-              style={{
-                borderRadius: "50%",
-              }}
+              className={styles.logo_img}
             />
           </span>
           <span>{config.title}</span>
         </Link>
       </div>
-      <nav className={styles.links} ref={links}>
-        <Link href="/">主页</Link>
-        <Link href="/doc">文章</Link>
-        <Link href="/blog">博客</Link>
-        <Link href="/clock">时钟</Link>
-        <Link href="/about">关于我</Link>
-        <a
-          href="https://github.com/can-dy-jack/blog"
-          target="_blank"
-          className={styles.github}
-        ></a>
+      <nav className={styles.nav}>
+        {
+          isMobile || (
+            <div className={styles.navbar_inner}>
+              <HeadNav styl={styles.github} />
+            </div>
+          )
+        }
+        {
+          isMobile && <div ref={bg} className={styles.sidebar_backdrop} role="presentation"></div>
+        }
+        {
+          isMobile && (
+            <div className={styles.navbar_sidebar} ref={aside}>
+              <div className={styles.aside_close} ref={close}>x</div>
+              <HeadNav styl={styles.github} />
+            </div>
+          )
+        }
       </nav>
-      <div className={styles.more} ref={more}>
-        <span>
-        <svg width="24px" height="24px" strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="var(--font)">
-          <path d="M7 12.5a.5.5 0 100-1 .5.5 0 000 1zM12 12.5a.5.5 0 100-1 .5.5 0 000 1zM17 12.5a.5.5 0 100-1 .5.5 0 000 1z" fill="var(--font)" stroke="var(--font)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
-          <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" stroke="var(--font)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
-        </svg>
-        </span>
-      </div>
+
+      {
+        isMobile && (
+          <div className={styles.more} ref={more}>
+            <span>
+            <svg width="24px" height="24px" strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="var(--font)">
+              <path d="M3 5h18M3 12h18M3 19h18" stroke="var(--font)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
+            </svg>
+            </span>
+          </div>
+        )
+      }
     </header>
   );
 }

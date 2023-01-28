@@ -10,9 +10,8 @@
   position: sticky;
   top: 50px;
   left: 0;
-  height: calc(100vh - 50px);
+  height: calc(100vh - 60px);
   overflow: auto;
-
   padding: 10px;
 }
 .aside_file {
@@ -24,9 +23,10 @@
   margin-bottom: 3px;
 }
 .aside_file:hover {
-  background-color: var(--foot-bg);
+  background-color: var(--aside-hover);
   cursor: pointer;
-  color: var(--main);
+  color: var(--primary);
+  border: none;
 }
 .aside_dir_head {
   padding: 8px 10px;
@@ -39,7 +39,7 @@
   user-select: none;
 }
 .aside_dir_head:hover {
-  background-color: var(--foot-bg);
+  background-color: var(--aside-hover);
 }
 .aside_dir_head svg {
   transform: rotate(0);
@@ -53,8 +53,8 @@
   transition: height 300ms ease;
 }
 .active {
-  background-color: var(--foot-bg);
-  color: var(--main);
+  background-color: var(--bg);
+  color: var(--primary);
 }
 
 .article {
@@ -100,26 +100,25 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   gap: 30px;
-  margin: 10px 0;
+  margin: 10px 0 30px 0;
 }
 .index_posts_item {
-  /* FIXME */
   width: 240px;
   height: 80px;
 
-  border: 2px solid #555;
+  border: 1px solid var(--second);
   color: var(--font);
   padding: 20px;
   border-radius: 5px;
   transition: all 300ms ease;
 }
 .index_posts_item:hover {
-  box-shadow: 0 0 0 3px var(--main-blur6), 0 5px 20px 5px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 0 3px var(--info), 0 5px 20px 5px rgba(0, 0, 0, 0.05);
   /* border-color: var(--main); */
   transform: translateY(-10px);
 }
 .index_posts_item sup {
-  background-color: var(--green1);
+  background-color: var(--info);
   margin: 5px;
   padding: 2px 4px;
   border-radius: 5px;
@@ -149,8 +148,8 @@
 }
 .pre a:hover,
 .next a:hover {
-  border-color: var(--main);
-  color: var(--main);
+  border-color: var(--primary);
+  color: var(--primary);
 }
 .next {
   text-align: right;

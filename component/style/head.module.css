@@ -1,70 +1,137 @@
 .header {
-  height: 50px;
-  width: 100%;
-  box-sizing: border-box;
   display: flex;
-  background-color: var(--head-bg);
-  padding: 0 20px;
-  align-items: center;
+  flex-wrap: nowrap;
   justify-content: space-between;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-
-  position: fixed;
-  top: 0;
-  left: 0;
+  align-items: center;
+  height: 60px;
+  background-color: var(--head-bg);
   backdrop-filter: blur(10px);
+  box-sizing: border-box;
+  padding: 0 20px 0 10px;
+  position: fixed;
+  width: 100%;
   z-index: 100;
+  border-bottom: 1px solid var(--border);
 }
+/* logo */
 .logo a {
   display: flex;
   align-items: center;
-  gap: 10px;
-  text-decoration: none;
+  color: var(--font);
+  transition: color 0.3s ease;
+  gap: 5px;
 }
-.links {
+.logo a:hover {
+  border: none;
+  color: var(--primary)
+}
+.logo_img {
+  border-radius: 50%;
+  transition: transform 0.5s cubic-bezier(0.55, 0.09, 0.37, 1.72);
+}
+.logo:hover .logo_img {
+  transform: rotate(180deg);
+}
+/* nav */
+.navbar_inner {
   display: flex;
   align-items: center;
-  gap: 20px;
-  transition: all 400ms ease-in-out;
+  justify-content: space-between;
+  gap: 18px;
+  transition: transform 0.3s ease;
+  box-sizing: border-box;
 }
-.header a {
-  color: var(--font);
+.sidebar_backdrop {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: all 0.1s ease;
 }
-.header a:hover {
-  color: var(--main);
+.navbar_sidebar {
+  transform: translateX(100%);
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: clamp(300px, 50%, 400px);
+  background-color: var(--bg);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  align-items: center;
+}
+.aside_close {
+  border-bottom: 1px solid var(--border);
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+.aside_close:hover {
+  background-color: var(--asider-bg);
+}
+.navbar_sidebar a:not(:last-child) {
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+.navbar_sidebar a:not(:last-child):hover {
+  border: none;
+  background-color: var(--asider-bg);
 }
 .github::before {
+  margin-left: 5px;
   content: "";
   background: var(--github) no-repeat;
   height: 24px;
   width: 24px;
   display: block;
-  margin: 0 10px;
-  transition: opacity 0.3s ease;
+  transition: all 0.5s ease;
+}
+.github:hover {
+  border-bottom: none;
 }
 .github:hover::before {
-  opacity: 0.8;
+  animation: github 2s linear infinite;
 }
-.more {
-  display: none;
-}
-@media screen and (max-width: 500px) {
-  .more {
-    display: block;
-    cursor: pointer;
+@keyframes github {
+  0% {
+    transform: translateY(0);
   }
-  .links {
-    background-color: var(--main-blur5);
-    backdrop-filter: blur(10px);
-    position: fixed;
-    top: 50px;
-    left: 0;
-    min-height: 50px;
-    width: 100vw;
-    z-index: 300;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+  25% {
+    transform: translateY(-8px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(8px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/* more */
+.more {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+/* media */
+@media screen and (max-width: 800px) {
+  .sidebar_backdrop {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .navbar_sidebar {
     transform: translateX(100%);
   }
 }

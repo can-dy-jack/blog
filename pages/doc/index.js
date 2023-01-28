@@ -1,7 +1,7 @@
 import Layout from "../../component/layout";
 import SEO from "../../component/SEO";
 import { get_docs_info, get_doc_data } from "../../lib/getDoc";
-import styles from "../../styles/docs.module.css";
+import styles from "../../src/styles/docs.module.css";
 import Link from "next/link";
 
 function DocIndex({ posts, data }) {

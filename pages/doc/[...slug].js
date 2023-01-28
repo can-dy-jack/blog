@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import Layout from "../../component/layout";
 import SEO from "../../component/SEO";
 import { get_doc_paths, get_docs_info, get_doc_data } from "../../lib/getDoc";
-import styles from "../../styles/docs.module.css";
+import styles from "../../src/styles/docs.module.css";
 import Link from "next/link";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 import { useEffect, useRef } from "react";
@@ -70,6 +70,7 @@ function DOCPages({ data_asider, data }) {
         }
       });
     });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [aside]);
 
   return (

@@ -6,8 +6,10 @@
   align-items: center;
   font-family: 楷体, 宋体, microsoft, sans-serif;
 
-  background-color: var(--index-head-bg);
-  background: var(--index-bg);
+  background: 
+    radial-gradient(circle at top right, var(--li), var(--ink)),
+    radial-gradient(circle at bottom left, var(--cyan), var(--oil-green));
+
   background-blend-mode: screen;
   /* color: #fff; */
 }
@@ -34,14 +36,10 @@
   font-size: 1.4rem;
   cursor: pointer;
   border-radius: 6px;
-  outline: none;
-  border: none;
   transition: all 0.3s ease-out;
   margin: 5px;
 }
-/* indexinfo styles */
 .indexinfo {
-  /* background-color: #222; */
   padding: 20px 10px;
   width: 100%;
   box-sizing: border-box;
@@ -65,5 +63,4 @@
 .mdx {
   width: 100%;
   box-sizing: border-box;
-  padding: var(--index_padding);
 }

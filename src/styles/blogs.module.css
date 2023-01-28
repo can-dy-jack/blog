@@ -1,7 +1,6 @@
 .main {
-    padding: 50px 0;
+    padding: 60px 0;
 }
-/* article_info */
 .article_info {
     width: 100%;
     box-sizing: border-box;
@@ -12,7 +11,6 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-
     position: relative;
     height: var(--h);
 }
@@ -28,24 +26,21 @@
 .article_info * {
     z-index: 5;
 }
-
 .title {
     font-size: 3rem;
     font-family: 楷体;
     margin: 10px;
 }
-/*  */
 .article_box {
-    /* FIXME 待定 - 适配还行！ */
+    /* FIXME mobile */
     width: clamp(400px, 80%, 800px);
     margin: 20px auto;
 }
 
-/*  */
 .foot {
     margin-top: 50px;
     width: 100%;
-    border-top: 1px solid var(--main);
+    border-top: 1px solid var(--border);
 }
 .foot_box {
     margin: 10px;
