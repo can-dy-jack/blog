@@ -1,13 +1,14 @@
-import Layout from "../../component/layout";
-import { useRouter } from "next/router";
-import SEO from "../../component/SEO";
+import React from 'react';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
+import Layout from '../../component/layout';
+import SEO from '../../component/SEO';
 import {
   getAllBlogIds,
   getBlogsData,
   getSortedBlogsData,
-} from "../../lib/getblog";
-import styles from "../../src/styles/blogs.module.css";
-import Link from "next/link";
+} from '../../lib/getblog';
+import styles from '../../src/styles/blogs.module.css';
 
 function BlogPages({ data, allBlogs }) {
   const router = useRouter();
@@ -15,17 +16,17 @@ function BlogPages({ data, allBlogs }) {
     <>
       <SEO
         title={data.title}
-        keywords={["博客列表", data.slug, data.title]}
-      ></SEO>
+        keywords={['博客列表', data.slug, data.title]}
+      />
       <Layout className={styles.main}>
         <section
           className={styles.article_info}
           style={{
-            "--bg": data.img
+            '--bg': data.img
               ? `url(${data.img})`
               : 'url("/blog/img/default.jpg")',
-            "--h": `${data.imgHeight || "300px"}`,
-            color: `${data.color || "inherit"}`,
+            '--h': `${data.imgHeight || '300px'}`,
+            color: `${data.color || 'inherit'}`,
           }}
         >
           <h1 className={styles.title}>{data.title}</h1>
@@ -35,7 +36,7 @@ function BlogPages({ data, allBlogs }) {
           <article
             className="md"
             dangerouslySetInnerHTML={{ __html: data.contentHtml }}
-          ></article>
+          />
         </section>
 
         <section className={styles.foot}>
@@ -48,17 +49,16 @@ function BlogPages({ data, allBlogs }) {
                     <div
                       key={blog.slug}
                       style={{
-                        "--bg": blog.img
+                        '--bg': blog.img
                           ? `url(${blog.img})`
-                          : `url("/blog/img/default2.jpg")`,
+                          : 'url("/blog/img/default2.jpg")',
                       }}
                     >
                       <Link href={blog.slug}>{blog.title}</Link>
                     </div>
                   );
-                } else {
-                  return null;
                 }
+                return null;
               })}
             </div>
           </aside>

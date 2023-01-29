@@ -1,28 +1,28 @@
-import SEO from "../component/SEO";
-import Layout from "../component/layout";
-import config from "../config.js";
-import styles from "../src/styles/Home.module.css";
-import Index from "../file/index.mdx";
-import Rbtn from "../stories/Rbtn";
-import TipText from "../stories/TipText";
-import Link from "next/link";
-import FlexBox from "../component/_partial/FlexBox";
-import { useEffect, useState } from "react";
+import Link from 'next/link';
+import React, { useEffect, useState } from 'react';
+import SEO from '../component/SEO';
+import Layout from '../component/layout';
+import config from '../config';
+import styles from '../src/styles/Home.module.css';
+import Index from '../file/index.mdx';
+import Rbtn from '../stories/Rbtn';
+import TipText from '../stories/TipText';
+import FlexBox from '../component/_partial/FlexBox';
 
 export default function Home() {
-  const [poem, setRandomPoem] = useState("");
+  const [poem, setRandomPoem] = useState('');
 
   useEffect(() => {
-    fetch("https://v1.hitokoto.cn/?c=k")
+    fetch('https://v1.hitokoto.cn/?c=k')
       .then((t) => t.json())
       .then((data) => setRandomPoem(data))
       .catch(console.warn)
-      .finally(() => console.log("poem loaded"));
+      .finally(() => console.log('poem loaded'));
   }, []);
 
   return (
     <>
-      <SEO title="主页" keywords={["主页", "blog"]}></SEO>
+      <SEO title="主页" keywords={['主页', 'blog']} />
       <Layout>
         <section className={styles.head}>
           <h2 className={styles.title}>{config.title}</h2>
@@ -39,13 +39,13 @@ export default function Home() {
 
         <div
           style={{
-            padding: "20px",
-            textAlign: "center",
+            padding: '20px',
+            textAlign: 'center',
           }}
         >
           <p className="flex-width">
             <TipText
-              text={poem.from_who ? poem.from_who : "佚名"}
+              text={poem.from_who ? poem.from_who : '佚名'}
               color="#ff2121"
               bg="#ff212121"
             >

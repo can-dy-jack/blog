@@ -1,10 +1,10 @@
-import "../src/styles/animate.css";
-import "../src/styles/global.css";
-import "../src/styles/highlight.css";
-import Functions from "../component/functions";
-import ConfirmPopup from "../component/cookie";
-import { useEffect, useState } from "react";
-import { CSSTransition } from "react-transition-group";
+import '../src/styles/animate.css';
+import '../src/styles/global.css';
+import '../src/styles/highlight.css';
+import React, { useEffect, useState } from 'react';
+import { CSSTransition } from 'react-transition-group';
+import Functions from '../component/functions';
+import ConfirmPopup from '../component/cookie';
 
 function MyApp({ Component, pageProps }) {
   const [cookie_is_open, set_cooie_open] = useState(false);
@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }) {
   };
 
   useEffect(() => {
-    if (document.cookie.includes("dark")) {
+    if (document.cookie.includes('dark')) {
       set_temp(false);
       set_cooie_open(true);
     } else {
@@ -37,8 +37,8 @@ function MyApp({ Component, pageProps }) {
       <CSSTransition
         in={temp}
         timeout={500}
-        classNames={"fade"}
-        unmountOnExit={true}
+        classNames="fade"
+        unmountOnExit
       >
         <ConfirmPopup func={() => set_temp(false)} setRight={setRight} />
       </CSSTransition>

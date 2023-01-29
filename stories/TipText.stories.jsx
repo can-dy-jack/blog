@@ -1,43 +1,45 @@
-import React from "react";
+import React from 'react';
 
-import TipText from "./TipText";
+import TipText from './TipText';
 
 export default {
-    title: "组件/TipText",
-    component: TipText,
-    argTypes: {
-        color: { control: 'color' }
-    }
-}
+  title: '组件/TipText',
+  component: TipText,
+  argTypes: {
+    color: { control: 'color' },
+  },
+};
 
-const Template = (args) => (
-    <TipText text={args.text} color={args.color} bg={args.bg}>
+function Template({ text, color, bg }) {
+  return (
+    <TipText text={text} color={color} bg={bg}>
       TipText
     </TipText>
-);
+  );
+}
 
-export const info = Template.bind({})
+export const info = Template.bind({});
 info.args = {
-    text: "info"
-}
+  text: 'info',
+};
 
-export const success = Template.bind({})
+export const success = Template.bind({});
 success.args = {
-    text: "success",
-    bg: "#1212ef24",
-    color: "#1212ef"
-}
+  text: 'success',
+  bg: '#1212ef24',
+  color: '#1212ef',
+};
 
-export const warning = Template.bind({})
+export const warning = Template.bind({});
 warning.args = {
-    text: "warning",
-    bg: "#ffcc4024",
-    color: "#ffcc40"
-}
+  text: 'warning',
+  bg: '#ffcc4024',
+  color: '#ffcc40',
+};
 
-export const danger = Template.bind({})
+export const danger = Template.bind({});
 danger.args = {
-    text: "danger",
-    bg: "#ef121224",
-    color: "#ef1212"
-}
+  text: 'danger',
+  bg: '#ef121224',
+  color: '#ef1212',
+};

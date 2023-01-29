@@ -1,8 +1,7 @@
 export default function handler(req, res) {
   res.status(200).json({
-    name: "blog",
-    app: "next.js",
-    description: "陈科衡的博客"
+    name: 'blog',
+    app: 'next.js',
+    description: '陈科衡的博客',
   });
 }
-

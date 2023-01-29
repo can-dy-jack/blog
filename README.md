@@ -6,6 +6,8 @@
 - eslint 代码规范
 - 适配移动端
 - 整理代码  <!-- 放进 src 文件夹里 -->
+- 优化开发环境文件读取效率（数据生成效率）
+<!-- stylelint commintlint husky lint-stage .editorconfig -->
 
 <!-- 文章 tag 和 cate 等 front-matter 扩展 -->
 <!-- 主题 - redux / useContext 传递信息 -->

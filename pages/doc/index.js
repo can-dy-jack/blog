@@ -1,33 +1,33 @@
-import Layout from "../../component/layout";
-import SEO from "../../component/SEO";
-import { get_docs_info, get_doc_data } from "../../lib/getDoc";
-import styles from "../../src/styles/docs.module.css";
-import Link from "next/link";
+import React from 'react';
+import Link from 'next/link';
+import Layout from '../../component/layout';
+import SEO from '../../component/SEO';
+import { get_docs_info, get_doc_data } from '../../lib/getDoc';
+import styles from '../../src/styles/docs.module.css';
 
 function DocIndex({ posts, data }) {
   const list = [];
-  for(const i of posts.data) {
-    if(i.slug === '/') continue;
-    if(i.type === 'file') {
+  posts.data.forEach((i) => {
+    if (i.type === 'file') {
       list.push({
         slug: i.slug,
         title: i.title,
-        root: ""
-      })
+        root: '',
+      });
     } else {
-      for(const j of i.files) {
+      Object.keys(i.files ?? {}).forEach((j) => {
         list.push({
-          slug: j.slug,
-          title: j.title,
-          root: i.dir
-        })
-      }
+          slug: i.files[j].slug,
+          title: i.files[j].title,
+          root: i.dir,
+        });
+      });
     }
-  }
+  });
 
   return (
     <Layout className="main">
-      <SEO title="文章"></SEO>
+      <SEO title="文章" />
       <div className={styles.article_box}>
         <section className={styles.article}>
           <h1 className={styles.docs_title}>
@@ -35,16 +35,17 @@ function DocIndex({ posts, data }) {
           </h1>
           <article
             className="md"
+            // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{
               __html: data.contentHtml,
             }}
-          ></article>
+          />
           <div className={styles.index_posts_list}>
             {
-              list.map(item => (
-                <Link className={styles.index_posts_item} key={item.slug} href={'/doc/' + (item.root ? item.root + '/' : '') + item.slug}>
+              list.map((item) => (
+                <Link className={styles.index_posts_item} key={item.title} href={`/doc/${item.root ? `${item.root}/` : ''}${item.slug}`}>
                   {item.title}
-                  { item.root !== "" && <sup>{item.root}</sup>}
+                  { item.root !== '' && <sup>{item.root}</sup>}
                 </Link>
               ))
             }
@@ -57,7 +58,7 @@ function DocIndex({ posts, data }) {
 
 export async function getStaticProps() {
   const posts = await get_docs_info();
-  const data = await get_doc_data(["/"]);
+  const data = await get_doc_data(['/']);
   return {
     props: {
       posts,
