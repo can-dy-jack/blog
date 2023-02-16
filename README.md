@@ -4,16 +4,9 @@
 ### 计划
 
 - 使用 sass 整理css代码，[stylint](https://stylelint.io/)控制css代码规范
-- [x] eslint - JavaScript代码规范
-- 适配移动端
+- 适配移动端优化
 - 整理代码  <!-- 放进 src 文件夹里 -->
-- 优化开发环境文件读取效率（数据生成效率）
-- front-matter 扩展，如 tag 和 cate 等
-- redux / useContext 传递信息（例如：多个主题切换）
-- mdx与md文件的统一与取舍
-  - 目前的项目`mdx`支持`Code Playground`
-- 代码某一（几）行高亮显示
-- 一些花里胡哨的东西
+- 优化 `lib/getDoc.js`
 
 ## markdown 规范
 
@@ -47,6 +40,7 @@
 - [MDX](https://mdxjs.com/)
 - [React Transition Group](https://reactcommunity.org/react-transition-group/)
 - [Sandpack](https://sandpack.codesandbox.io)
+- [styled-components](https://styled-components.com/docs)
 
 ## 使用到的资源
 
