@@ -21,7 +21,7 @@ function BlogIndex({ allBlogsData }) {
       </section>
       <section className={s.bloglistbox}>
         <div className={s.bloglist}>
-          {allBlogsData.map((blog) => (
+          {allBlogsData && allBlogsData.map((blog) => (
             <div
               key={blog.title}
               className={s.blogitem}

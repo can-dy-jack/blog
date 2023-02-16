@@ -35,6 +35,7 @@ function BlogPages({ data, allBlogs }) {
         <section className={styles.article_box}>
           <article
             className="md"
+            // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{ __html: data.contentHtml }}
           />
         </section>
@@ -43,7 +44,7 @@ function BlogPages({ data, allBlogs }) {
           <aside className={styles.foot_box}>
             <h3>最近的博文</h3>
             <div className={styles.more_blog}>
-              {allBlogs.map((blog) => {
+              {allBlogs && allBlogs.map((blog) => {
                 if (blog.slug !== router.query.slug) {
                   return (
                     <div

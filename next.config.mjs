@@ -1,11 +1,11 @@
 import RemarkMDX from '@next/mdx';
-import emoji from "remark-emoji";
+import emoji from 'remark-emoji';
 import remarkGfm from 'remark-gfm';
-import remarkMath from "remark-math";
-import remarkRehype from "remark-rehype";
-import rehypeHighlight from "rehype-highlight";
-import rehypeMathjax from "rehype-mathjax";
-import rehypeStringify from "rehype-stringify";
+import remarkMath from 'remark-math';
+import remarkRehype from 'remark-rehype';
+import rehypeHighlight from 'rehype-highlight';
+import rehypeMathjax from 'rehype-mathjax';
+import rehypeStringify from 'rehype-stringify';
 
 const withMDX = RemarkMDX({
   extension: /\.mdx?$/,
@@ -14,15 +14,15 @@ const withMDX = RemarkMDX({
       emoji,
       remarkGfm,
       remarkMath,
-      remarkRehype
+      remarkRehype,
     ],
     rehypePlugins: [
       rehypeHighlight,
       rehypeMathjax,
-      rehypeStringify
+      rehypeStringify,
     ],
   },
-})
+});
 const mdx = withMDX({
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
 });
@@ -32,7 +32,7 @@ const mdx = withMDX({
  */
 const nextConfig = {
   ...mdx,
-  basePath: "/blog",
+  basePath: '/blog',
   images: {
     unoptimized: true,
   },
