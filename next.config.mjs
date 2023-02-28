@@ -9,7 +9,7 @@ import rehypeStringify from 'rehype-stringify';
 import { remarkCodeHike } from '@code-hike/mdx';
 import fs from 'fs';
 
-const text = fs.readFileSync('./github-light.json', 'utf8');
+const text = fs.readFileSync('node_modules/shiki/themes/github-light.json', 'utf8');
 const theme = JSON.parse(text);
 
 const withMDX = RemarkMDX({
