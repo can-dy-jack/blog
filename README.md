@@ -1,13 +1,6 @@
 ## blog
 > 基于Next.js制作的博客项目
 
-### 计划
-
-- 使用 sass 整理css代码，[stylint](https://stylelint.io/)控制css代码规范
-- 适配移动端优化
-- 整理代码  <!-- 放进 src 文件夹里 -->
-- 优化 `lib/getDoc.js`
-
 ## markdown 规范
 
 ### blog front-matter 规范

@@ -1,6 +1,6 @@
 {
   "name": "blog",
-  "version": "0.1.9",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -12,6 +12,7 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@code-hike/mdx": "^0.8.0",
     "@codesandbox/sandpack-react": "^1.17.0",
     "@codesandbox/sandpack-themes": "^1.17.0",
     "@kartjim/chook": "^0.2.1",

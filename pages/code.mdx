@@ -1,7 +1,15 @@
+import CodeTemplate from "../src/_partial/code.jsx"
+
+# Hello
+
+Lorem ipsum dolor sit amet.
+
+```javascript _app.js focus=38:46
 import '../src/styles/animate.css';
 import '../src/styles/global.css';
 import '../src/styles/highlight.css';
 import '@code-hike/mdx/dist/index.css';
+# mark
 import React, { useEffect, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import Functions from '../component/functions';
@@ -48,3 +56,8 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default MyApp;
+```
+
+Lorem ipsum dolor sit amet.
+
+export default ({ children }) => <CodeTemplate>{children}</CodeTemplate>;
